@@ -51,7 +51,7 @@ class user_Page extends View {
                     $error = 'Неверный логин или пароль';
                     break;
                 case 'OK':
-                    header('location: /');
+                    Router::setPage('/');
                     die();
                     break;
                 case 'LOGIN':
