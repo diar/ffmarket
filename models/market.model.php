@@ -1,0 +1,125 @@
+<?php
+
+/**
+ * @package PapipuEngine
+ * @author valmon, z-mode
+ * @version 0.1
+ * Модель для управления отображением баннеров
+ */
+class MD_Market extends Model {
+
+    /**
+     * Инициализация модели
+     * @return null
+     */
+    public static function initModel() {
+        
+    }
+
+    /**
+     * Получить список районов
+     * @return array
+     */
+    public static function getLocations() {
+        return DB::getRecords(self::getPrefix() . 'list_location');
+    }
+
+    /**
+     * Оформление заказа
+     * @return array
+     */
+    public static function order($name, $phone, $address, $trash) {
+        // Проверяем номер телефона
+        if (!$phone = String::toPhone($phone))
+            $error = "Введите номер телефона в правильном формате";
+
+        if (empty($_SESSION['trash']) || sizeof($_SESSION['trash']) == 0)
+            $error = "Вы должны добавить в корзину хотя бы 1 блюдо";
+
+        if (!empty($error))
+            return $error;
+
+        $trash = $_SESSION['trash'];
+
+        $fmin = DB::getRecord(
+            Model::getPrefix () . 'market_orders',
+            'ip=' . DB::quote(Router::getClientIp()) .
+            ' AND start_time > NOW() - INTERVAL 5 MINUTE'
+        );
+        if ($fmin)
+            return 'С важего ip уже был отправлен заказ. Подождите 5 мин.';
+
+        // Отправляем сообщение администраторам
+        $partners = array();
+        foreach ($trash as $item) {
+            if (empty($partners[$item['rest_id']])) {
+                $partners[$item['rest_id']] = array();
+            }
+            array_push($partners[$item['rest_id']], array('title' => $item['title'], 'portions' => $item['items']));
+        }
+        foreach ($partners as $rest_id => $partner) {
+            $dishes = array();
+            $dishes_small = array();
+            foreach ($partner as $dish) {
+                $portions_text = '';
+                foreach ($dish['portions'] as $portion) {
+                    $portions_text.=$portion['portion'] . ' гр. - ' . $portion['count'] . ' шт.; ';
+                }
+                $dishes[] = $dish['title'] . ' (' . $portions_text . ') ';
+                $dishes_small[] = $dish['title'];
+            }
+            $dishes_text = implode(', ', $dishes);
+            $dishes_small_text = implode(', ', $dishes_small);
+
+            // Добавляем заказ в логи
+            DB::insert(Model::getPrefix() . 'market_orders', array(
+                        'rest_id' => DB::quote($rest_id),
+                        'text' => DB::quote($dishes_text),
+                        'text_small' => DB::quote($dishes_small_text),
+                        'status' => DB::quote('Принят'),
+                        'start_time' => 'NOW()',
+                        'address' => DB::quote($address),
+                        'ip' => DB::quote(Router::getClientIp()),
+                        'phone' => DB::quote($phone)
+                            ), false);
+
+            $admin = DB::getRecord(Model::getPrefix() . 'market_partner', 'rest_id=' . DB::quote($rest_id));
+            $text = 'Заказ пользователя ' . $name . ' на номер ' . $phone . ' по адресу ' . $address . ': ' . $dishes_text;
+            $sms_text = 'Заказ на номер ' . $phone . ':' . $dishes_text;
+            if (!empty($admin['partner_email'])) {
+                $mail = Mail::newMail($text, $admin['partner_email'], 'foodfood.ru');
+                $mail->Send();
+            }
+            if (!empty($admin['partner_phones'])) {
+                $phones = explode(',', $admin['partner_phones']);
+                foreach ($phones as $admin_phone) {
+                    MD_Sms::sendSms($admin_phone, $text);
+                }
+            }
+        }
+
+        // Если все верно оформляем заказ
+        $sms_user_text = 'Ваш заказ принят. Скоро вам позвонит менеджер ресторана';
+        MD_Sms::sendSms($phone, $sms_user_text);
+
+        return '<span style="color:green">Ваш заказ принят</span>';
+    }
+
+    public static function getTree($parent_id = 0,$out = '') {
+        if (DB::getCount('kazan_market_tree', "parent_id = '$parent_id'") > 0) {
+            $query = "SELECT * FROM kazan_market_tree WHERE parent_id = '$parent_id'";
+            $result = mysql_query($query);
+            if ($parent_id == 0) $class = 'class="tree_menu" id="tree_menu"'; else  $class = '';
+            $out .=  '<ul ' . $class . '>';
+            while ($row = mysql_fetch_array($result)) {
+                $out .= "<li><a href='/product/list/category/$row[id]'>$row[title]</a>";
+                self::get_tree($row['id'],$out); //recursive
+                $out .= "</li>";
+            }
+            $out .= "</ul>";
+        }
+        return $out;
+    }
+    
+
+}
