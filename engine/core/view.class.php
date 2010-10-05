@@ -70,7 +70,6 @@ class View {
         self::$page['trash']['price'] = $gen_price;
         self::$page['header']['tree'] = $tree;
         self::$page['user'] = User::getParams();
-        self::$page['user']['message_count'] = MD_User::getMessageCount();
         self::$page['date_today']['year'] = String::getDate();
         self::$page['date_today']['month'] = String::toMonth(date('m'));
         self::$page['date_today']['month_number'] = date('m');
