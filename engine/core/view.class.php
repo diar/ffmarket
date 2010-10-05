@@ -64,7 +64,7 @@ class View {
             foreach ($trash AS $item) {
                 $gen_price+=$item['price'] * $item['count'];
             }
-        } else $gen_count = 0;
+        } else $gen_price = 0;
 
         // Показываем страницу
         self::$page['trash']['price'] = $gen_price;
