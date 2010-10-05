@@ -54,6 +54,9 @@ class View {
         //получение дерева
         mysql_connect('localhost', 'root', '150878');
         mysql_select_db('foodfood');
+        mysql_query("set character_set_client='utf8'");
+        mysql_query("set character_set_results='utf8'");
+        mysql_query("set collation_connection='utf8_general_ci'");
         $tree = MD_Market::getTree();
         mysql_close();
 

@@ -351,6 +351,9 @@ class AdminModule {
         //Начинаем с начальной строки
         mysql_connect('localhost', 'root', '150878');
         mysql_select_db('foodfood');
+        mysql_query("set character_set_client='utf8'");
+        mysql_query("set character_set_results='utf8'");
+        mysql_query("set collation_connection='utf8_general_ci'");
         View::assign('tree', $tree);
         View::assign('pageTitle', self::getTitle());
         View::assign('admin', $_SESSION['admin']);
