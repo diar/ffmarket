@@ -106,10 +106,10 @@ class MD_Menu extends Model {
      */
     public static function getProduct($url = null, $id = null) {
         $where = '1=1';
-        //if (!empty ($url))
+        if (!empty ($url))
             $where .=" AND url = '$url'";
-        //if (!empty ($id))
-         //   $where .=" AND id = '$id'";
+        if (!empty ($id))
+            $where .=" AND id = '$id'";
 
         $product = self::get($where);
 

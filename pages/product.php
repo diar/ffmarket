@@ -25,7 +25,6 @@ class product_Page extends View {
         $url = null;
         if (intval($id) > 0) $item_id = intval($id);
         else $url = $id;
-        echo $url;
         self::$page['header']['content'] = MD_Menu::getProduct($url, $item_id);
         self::showXSLT('pages/view/index');
     }
