@@ -28,7 +28,7 @@
            <div class="right">
            <xsl:if test="is_bio = 1">
            		<div class="es">
-                <img src="public/images/es_icon.jpg" alt="Органический продукт.Признано ЕС" align="left" class="es" />
+                <img src="/public/images/es_icon.jpg" alt="Органический продукт.Признано ЕС" align="left" class="es" />
                            <a href="#">Органический <br />
 продукт.</a><br />
 Признано ЕС
