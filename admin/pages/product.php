@@ -34,7 +34,6 @@ class Product extends AdminModule {
         } else {
             $record = DBP::getRecord('market_products', "id =" . $id);
         }
-        Debug::dump($record);
         $boxes = DB::getRecords('list_market_box');
         $record['boxes'] = $boxes;
         $record['title'] = $record['title'];
@@ -67,12 +66,10 @@ class Product extends AdminModule {
             $data['size_price'][$z]['price'] = $v;
             $z++;
         }
-        Debug::dump($data);
         //удаляем не нужные элементы из массива
         unset($data['size'], $data['price']);
         //Преобразовываем в строку
         $data['size_price'] = serialize($data['size_price']);
-        Debug::dump($data);
         if (!empty($_FILES['image']['name']))
             $data['image'] = File::saveFile('image', null, Config::getValue('path', 'upload') . 'images/products');
         //малое изображение

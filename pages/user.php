@@ -128,6 +128,10 @@ class user_Page extends View {
      * 
      */
     public static function trashAction() {
+        if (!empty($_POST['phone'])) {
+            self::$page['header']['content']['message'] = 'Заказ принят. Скоро с Вами свяжуться';
+        }
+        
         $itog = 0;
         $trash = $_SESSION['trash'];
         if (sizeof($trash) > 0) {
@@ -137,8 +141,7 @@ class user_Page extends View {
                 $item['tmb_image'] = DB::getValue('kazan_market_products', 'tmb_image',"id = '$item[item_id]'");
             }
         }
-        if (!empty($_POST))
-        self::$page['header']['content']['message'] = 'Заказ принят. Скоро с Вами свяжуться';
+        
         self::$page['header']['content']['itog'] = $itog;
         self::$page['header']['content']['trash'] = $trash;
 
