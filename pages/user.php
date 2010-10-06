@@ -128,22 +128,26 @@ class user_Page extends View {
      * 
      */
     public static function trashAction() {
+        $message = '';
         if (!empty($_POST['phone']) && !empty ($_POST['address'])) {
-            $phone = String::toPhone($_POST['phone']);
-            MD_Market::order($name, $phone, $address, $trash);
+            $date_time = $_POST['day'].".".$_POST['month']." ".$_POST['time'];
+            $get_myself = !empty($_POST['get_myself']) ? 1 : 0;
+            $message = MD_Market::order($_POST['phone'], $_POST['address'], $get_myself ,$date_time);
             self::$page['header']['content']['message'] = 'Заказ принят. Скоро с Вами свяжуться';
+        } elseif (empty($_POST['phone']) && empty ($_POST['address'])){
+            $message = 'Заполните пожалуйста поля телефон и адрес.';
         }
         
         $itog = 0;
-        $trash = $_SESSION['trash'];
-        if (sizeof($trash) > 0) {
+        $trash = isset($_SESSION['trash']) ? $_SESSION['trash'] : "";
+        if (!empty($trash)) {
             foreach ($trash as &$item) {
                 $present = $item['is_present'] > 0 ? 200 : 0;
                 $itog += $item['gen_price'] = $item['count'] * $item['price'] + $present;
                 $item['tmb_image'] = DB::getValue('kazan_market_products', 'tmb_image',"id = '$item[item_id]'");
             }
         }
-        
+        self::$page['header']['content']['message'] = $message;
         self::$page['header']['content']['itog'] = $itog;
         self::$page['header']['content']['trash'] = $trash;
 

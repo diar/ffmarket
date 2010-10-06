@@ -447,6 +447,11 @@ font-size:18px;
 color:#009900;
 }
 
+.message_red {
+font-size:18px;
+color:#ff6600;
+}
+
 /***************************************************/
 .title {
 	font-size:24px;

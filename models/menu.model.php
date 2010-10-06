@@ -104,17 +104,17 @@ class MD_Menu extends Model {
      * @param $id
      * @return array
      */
-    public static function getProduct($url = null, $id = null) {
+    public static function getProduct($id) {
         $where = '1=1';
-        if (!empty ($url))
-            $where .=" AND url = '$url'";
-        if (!empty ($id))
-            $where .=" AND id = '$id'";
+        if (intval($id) > 0)$where .=" AND id = '$id'";
+        else $where .=" AND url = '$id'";
+            
         $product = self::get($where);
 
         $product['size_price'] = $price = unserialize($product['size_price']);
         $product['price'] = $price[0]['price'];
         $product['packing'] = DB::getValue('list_market_box', 'title', 'id =' . $product['packing']);
+
         if ($product['discount'] > 0) {
             foreach ($product['size_price'] as &$item) {
                 $item['old_price'] = $item['price'];

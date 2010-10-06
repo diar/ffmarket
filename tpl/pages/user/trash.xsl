@@ -19,7 +19,7 @@
     <xsl:template match="content">
 		<div class="title">Способы оплаты</div>
             <div class="pay_mode">
-            	<div class="message"><xsl:value-of select="message" /></div>
+            	<div class="message_red"><xsl:value-of select="message" disable-output-escaping="yes"/></div>
                 <ul>
                     <li><input type="radio" name="pay_mode" disabled="disabled" /><span class="disabled">Картой Visa (кроме Visa Electron) или MasterCard</span></li>
                     <li><input type="radio" name="pay_mode" disabled="disabled" /><span class="disabled">WebMoney</span></li>
@@ -36,7 +36,7 @@
 				<textarea name="address" id="address"></textarea>
                 </div>
 				<div class="time">Удобное время: 
-                <input type="text" id="day" name="day" /> 
+                <input type="text" id="day" name="day" value="{//date_today/day}" /> 
                 <select name="month" id="month">
                     <option value="1">Январь</option>
                     <option value="2">Февраль</option>
@@ -51,10 +51,11 @@
                     <option value="11">Ноябрь</option>
                     <option value="12">Декабрь</option>
                 </select>
-                <input type="text" id="time" name="time"/>
+                <input type="text" id="time" name="time" value="20:00"/>
                 </div>
 				<div class="get_myself">Забрать самому <input type="checkbox" name="get_myself" id="get_myself"/></div>
             </div>
+            <xsl:if test="trash != ''">
             <div class="title">Товар<span>(Проверьте правильность заказа)</span></div>
             <div class="trash_list">
             	<table>
@@ -63,12 +64,14 @@
             </div>
             
             <div class="trash_itogo">Итого с доставкой: <span id="itog"><xsl:value-of select="itog" /></span> Р</div>
-            <div class="trash_rules"><input type="checkbox" name="rules" id="rules" /> Нажимая кнопку “Купить” Вы соглашаетесь с нашими <a href="#">правилами</a> магазина</div>
+            <div class="trash_rules">Нажимая кнопку “Купить” Вы соглашаетесь с нашими <a href="#">правилами</a> магазина</div>
             
             <div class="trash_buy_button">
             	<input type="submit" value="Купить" id="buy" />
             </div>
+            </xsl:if>
             </form>
+            
     </xsl:template>
 
 <xsl:template match="trash/item">
