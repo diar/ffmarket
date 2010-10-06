@@ -110,7 +110,7 @@ class MD_Menu extends Model {
             $where .=" AND url = '$url'";
         if (!empty ($id))
             $where .=" AND id = '$id'";
-
+            echo $where;
         $product = self::get($where);
 
         $product['size_price'] = $price = unserialize($product['size_price']);
