@@ -21,7 +21,11 @@ class product_Page extends View {
      * Страница продукта
      */
     public static function viewAction($id) {
-        self::$page['header']['content'] = MD_Menu::getProduct();
+        $id = null;
+        $url = null;
+        if (intval($id) > 0) $id = intval($id);
+        else $url = $id;
+        self::$page['header']['content'] = MD_Menu::getProduct($url, $id);
         self::showXSLT('pages/view/index');
     }
 

@@ -41,8 +41,7 @@ class MD_Market extends Model {
 
         $trash = $_SESSION['trash'];
 
-        $fmin = DB::getRecord(
-            Model::getPrefix () . 'market_orders',
+        $fmin = DB::getRecord('kazan_market_orders',
             'ip=' . DB::quote(Router::getClientIp()) .
             ' AND start_time > NOW() - INTERVAL 5 MINUTE'
         );

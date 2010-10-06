@@ -128,7 +128,9 @@ class user_Page extends View {
      * 
      */
     public static function trashAction() {
-        if (!empty($_POST['phone'])) {
+        if (!empty($_POST['phone']) && !empty ($_POST['address'])) {
+            $phone = String::toPhone($_POST['phone']);
+            MD_Market::order($name, $phone, $address, $trash);
             self::$page['header']['content']['message'] = 'Заказ принят. Скоро с Вами свяжуться';
         }
         
