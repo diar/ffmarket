@@ -129,6 +129,7 @@ ul.tree_menu li{
 	margin-left:-10px;
 	float:left;
 	clear:both;
+	line-height:18px;
 }
 ul.tree_menu li a.active {
 	padding: 0 20px 4px 0px;	
@@ -141,6 +142,7 @@ ul.tree_menu li ul {
 }
 ul.tree_menu li ul li {
 	padding:1px 0;
+	width:140px;
 }
 
 ul.tree_menu li ul a.active {
@@ -149,6 +151,9 @@ ul.tree_menu li ul a.active {
 	background:none;
 }
 
+a.add_to_tree {
+margin:0 3px 0 5px;
+}
 /********************MAIN OUTPUT **********************/
 
 #list {

@@ -2,6 +2,7 @@ $(document).ready(
     function() {
 
 	$('.add_to_tree').live('click',function(){
+		$('input',$('#tree_menu')).remove();									
 		level = parseInt($(this).attr('rel'));
 		new_el = '<li rel='+level+'><input type="text" name="title" maxlength="150" size="10" id="input_el_title" /> <input type="button" value="ok" id="add_to_tree_el"/></li>'
 		if (level == 0) $('#tree_menu').append(new_el);

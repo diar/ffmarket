@@ -21,8 +21,6 @@ class product_Page extends View {
      * Страница продукта
      */
     public static function viewAction($id) {
-        Debug::dump($_SESSION);
-        
         self::$page['header']['content'] = MD_Menu::getProduct();
         self::showXSLT('pages/view/index');
     }
@@ -51,7 +49,7 @@ class product_Page extends View {
         }
 
         // Показываем страницу
-
+        self::$page['header']['content']['title'] = DB::getValue('kazan_market_tree', 'title', "id = '$parent_id'");
         self::$page['header']['content']['products'] = MD_Menu::getProducts($parent_id,$param);
         self::showXSLT('pages/index/index');
     }

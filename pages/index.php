@@ -21,6 +21,7 @@ class index_Page extends View {
      * Главная страница сайта
      */
     public static function indexAction($id) {
+        self::$page['header']['content']['title'] = 'Витрина';
         self::$page['header']['content']['products'] = MD_Menu::getProducts();
         self::showXSLT('pages/index/index');
     }
