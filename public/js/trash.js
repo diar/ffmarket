@@ -14,36 +14,27 @@ $(document).ready(function () {
 			preparePrice (el);
 			prepareItog();
 		});
+
+                $(".delete").click(function(){
+                    size = $(this).parents('td').children('input.size').val();
+                    item_id = $(this).parents('td').children('input.item_id').val();
+                    c_tr = $(this).parent().parent();
+                    $.post('/user/removeFromTrash/',
+                    {
+                        'item_id':item_id,
+                        'size':size
+                    },function(data){
+                       c_tr.remove();
+                       prepareItog();
+                       //alert(data);
+                    });
+                });
  
     
 });
 
 
 
-	
-
-    // Кнопка заказать
-    $('.get .buy').click(function(){
-        price = parseInt ($(this).parents('.item').find('.price .new span').html());
-        portion = parseInt ($(this).parents('.item').find('.portion.active').html());
-        dish_id = $(this).parents('.item').attr('id').replace('dish_','');
-        rest_id = $(this).parents('.item').attr('rest_id');
-        title = $(this).parents('.item').find('.title a').html();
-        $.post('/market/'+site_city+'/index/add/',
-        {
-            'dish_id':dish_id,
-            'price':price,
-            'title':title,
-            'portion':portion,
-            'rest_id':rest_id
-        },function(data){
-            $('.trash .order').show();
-            $('.trash_description').html(data);
-            $('.trash .rub').html(
-                $('.trash_description .price').html()+'<sup> руб.</sup>'
-                );
-        });
-    });
 
 
 

@@ -34,6 +34,8 @@ $(document).ready(function () {
             });
             return false;
         });
+//
+        $("a.active",$("#tree_menu")).parents('li').children("a").attr('class','active');
     
 });
 

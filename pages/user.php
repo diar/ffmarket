@@ -154,6 +154,22 @@ class user_Page extends View {
         self::showXSLT('pages/user/trash');
     }
 
+    public static function removeFromTrashAjaxAction() {
+        if (isset($_SESSION['trash']) && count($_SESSION['trash']) > 0) {
+            $z = 0;
+            $trash = $_SESSION['trash'];
+            unset($_SESSION['trash']);
+            foreach ($trash as $item) {
+                if ($item['item_id'] != $_POST['item_id'] && $item['size'] != $_POST['size']) {
+                    array_push($_SESSION['trash'][$z], $item);
+                    $z++;
+                }
+                
+                
+            }
+            //print_r($_SESSION);
+        }
+    }
     /**
      * Выход
      */
