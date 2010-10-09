@@ -33,7 +33,7 @@
                 </div>
                 <div class="field" style="text-align:center;"><input type="checkbox" id="remember" name="remember" value="1" /> Запомнить меня</div>
                 <div class="field" style="text-align:center;">
-	                <input type="submit" name="submit" value="Войти" />
+	                <input type="submit" name="submit" value="Войти в магазин" />
                 </div>
 				</form>
             </div>

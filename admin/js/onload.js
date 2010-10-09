@@ -38,6 +38,25 @@ $(document).ready(
 		});
 		
 	});
+
+        simpleTreeCollection = $('.simpleTree').simpleTree({
+		autoclose: true,
+		afterClick:function(node){
+			alert("text-"+$('a:first',node).text());
+		},
+		afterDblClick:function(node){
+			alert("text-"+$('a:first',node).text());
+		},
+		afterMove:function(destination, source, pos){
+			alert("destination-"+destination.attr('id')+" source-"+source.attr('id')+" pos-"+pos);
+		},
+		afterAjax:function()
+		{
+			//alert('Loaded');
+		},
+		animate:true
+		//,docToFolderConvert:true
+	});
 });
 
 function add_line(){

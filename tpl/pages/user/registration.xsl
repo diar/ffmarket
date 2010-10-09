@@ -33,7 +33,7 @@
                 </div>
                 <div class="field" style="text-align:center;"><input type="checkbox" id="apply" name="apply" value="1" /> Ознакомлен с правилами </div>
                 <div class="field" style="text-align:center;">
-	                <input type="submit" name="submit" value="Регистрация" />
+	                <input type="submit" name="submit" value="Зарегистрироваться" />
                 </div>
 				</form>
             </div>
