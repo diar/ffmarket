@@ -124,6 +124,8 @@ padding-bottom:6px;
 ul.tree_menu {
 	font-size:14px;
 	margin:0;
+	list-style:outside;
+	list-style-type:circle;
 }
 ul.tree_menu li{
 	margin-left:-10px;
@@ -142,7 +144,7 @@ ul.tree_menu li ul {
 }
 ul.tree_menu li ul li {
 	padding:1px 0;
-	width:140px;
+	width:600px;
 }
 
 ul.tree_menu li ul a.active {
@@ -150,7 +152,13 @@ ul.tree_menu li ul a.active {
 	cursor:default;
 	background:none;
 }
-
+.item_functions {display:none;}
+ul.tree_menu div {cursor:pointer; }
+ul#tree_menu  ul.tree_menu {display:none;}
+ul.tree_menu div:hover .item_functions {display:inline;}
+.placeholder {
+	background:#AAAAAA;
+}
 a.add_to_tree {
 margin:0 3px 0 5px;
 }

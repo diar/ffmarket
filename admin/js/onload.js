@@ -1,8 +1,21 @@
+function send(event) {
+//        var current = event[0].my.current;
+//        var parent = event[0].my.parent;
+//        var prev_sibling = event[0].my.prev_sibling;
+        alert(1);
+//        $.ajax({
+//                type: "POST",
+//                async: false,
+//                url: "/ajax-move-node",
+//                data: "parent="+parent+"&current="+current+"&prev_sibling="+prev_sibling
+//        });
+}
+
 $(document).ready(
     function() {
 
 	$('.add_to_tree').live('click',function(){
-		$('input',$('#tree_menu')).remove();									
+		$('input',$('#tree_menu')).parent().remove();
 		level = parseInt($(this).attr('rel'));
 		new_el = '<li rel='+level+'><input type="text" name="title" maxlength="150" size="10" id="input_el_title" /> <input type="button" value="ok" id="add_to_tree_el"/></li>'
 		if (level == 0) $('#tree_menu').append(new_el);
@@ -38,25 +51,25 @@ $(document).ready(
 		});
 		
 	});
+        $('ul#tree_menu div').live('click',function(){
+            _ul = $(this).parent().find('ul');
+            if (_ul.css('display') == 'none') _ul.show();
+            else _ul.hide();
+        });
+        $('ul#tree_menu').nestedSortable({
+					disableNesting: 'no-nest',
+					forcePlaceholderSize: true,
+					handle: 'div',
+					items: 'li',
+					opacity: .6,
+					placeholder: 'placeholder',
+					tabSize: 25,
+					tolerance: 'pointer',
+					toleranceElement: '> div',
+                                        autoScroll: true,
+                                        onChange : send
 
-        simpleTreeCollection = $('.simpleTree').simpleTree({
-		autoclose: true,
-		afterClick:function(node){
-			alert("text-"+$('a:first',node).text());
-		},
-		afterDblClick:function(node){
-			alert("text-"+$('a:first',node).text());
-		},
-		afterMove:function(destination, source, pos){
-			alert("destination-"+destination.attr('id')+" source-"+source.attr('id')+" pos-"+pos);
-		},
-		afterAjax:function()
-		{
-			//alert('Loaded');
-		},
-		animate:true
-		//,docToFolderConvert:true
-	});
+				});
 });
 
 function add_line(){
@@ -71,5 +84,6 @@ function set_line_function (){
 	$('tr td div', $('#size_price')).html('-').attr('class','function_line del_line');
 	$('tr td:last div', $('#size_price')).html('+').attr('class','function_line add_line');
 }
+
 
 

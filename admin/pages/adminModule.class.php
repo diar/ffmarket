@@ -365,10 +365,10 @@ class AdminModule {
         if (DBP::getCount('market_tree', "parent_id = '$parent_id'") > 0) {
             $query = "SELECT * FROM kazan_market_tree WHERE parent_id = '$parent_id'";
             $result = mysql_query($query);
-            if ($parent_id == 0) $class = 'class="tree_menu simpleTree" id="tree_menu"'; else  $class = '';
-            echo '<ul ' . $class . '>';
+            if ($parent_id == 0) $class = 'id="tree_menu"'; else  $class = '';
+            echo '<ul class="tree_menu"' . $class .  '>';
             while ($row = mysql_fetch_array($result)) {
-                echo "<li rel='$row[id]'><a href='#'>$row[title]</a>";
+                echo "<li rel='$row[id]'><div >$row[title] <span class='item_functions'>";
                 if ($row['doc_id'] > 0)
                 echo "<a href='admin.php?page=product&action=edit&id=$row[doc_id]' ><img src='images/4.jpg' alt='редактировать' /></a>
                 <a href='admin.php?page=product&action=delete&id=$row[doc_id]'><img src='images/5.jpg' alt='удалить' /></a>
@@ -377,10 +377,11 @@ class AdminModule {
                 echo "<a href='#' class='add_to_tree' rel='$row[id]'><img src='images/1.jpg' alt='Добавить раздел' /></a>
                 <a href='admin.php?page=product&action=add&parent_id=$row[id]'><img src='images/add_product.jpg' alt='Добавить раздел' /></a>
                 ";
+                echo '</span></div>';
                 self::get_tree($row['id']); //recursive
                 echo "<ul></ul></li>";
             }
-            echo "</ul>";
+            echo "<ul></ul></ul>";
         }
     }
 
