@@ -22,7 +22,7 @@ class index_Page extends View {
      */
     public static function indexAction($id) {
         self::$page['header']['content']['title'] = 'Витрина';
-        self::$page['header']['content']['products'] = MD_Menu::getProducts();
+        self::$page['header']['content']['products'] = MD_Menu::getProducts(null,'on_main');
         self::showXSLT('pages/index/index');
     }
 

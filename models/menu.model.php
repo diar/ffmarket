@@ -83,6 +83,8 @@ class MD_Menu extends Model {
             $where .=" AND type = 1";
         if ($param == 'sale')
             $where .=" AND discount > 0";
+        if ($param == 'on_main')
+            $where .=" AND on_main = 1";
         $products = self::getAll($where, ' RAND()');
 
         foreach ($products as &$item) {
