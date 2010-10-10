@@ -121,41 +121,41 @@ ul.menu li {
 padding-bottom:6px;
 }
 
-ul.page-list {
+ul.tree_menu {
 	font-size:14px;
 	margin:0;
 	list-style:outside;
 	list-style-type:circle;
 }
-ul.page-list li{
+ul.tree_menu li{
 	margin-left:-10px;
 	float:left;
 	clear:both;
 	line-height:18px;
 }
-ul.page-list li a.active {
+ul.tree_menu li a.active {
 	padding: 0 20px 4px 0px;	
 	color:#666;
 	text-decoration:none;
 	cursor:default;
 }
-ul.page-list li ul {
+ul.tree_menu li ul {
 	font-size:12px;
 }
-ul.page-list li ul li {
+ul.tree_menu li ul li {
 	padding:1px 0;
 	width:600px;
 }
 
-ul.page-list li ul a.active {
+ul.tree_menu li ul a.active {
 	text-decoration:none;
 	cursor:default;
 	background:none;
 }
 .item_functions {display:none;}
-ul.page-list div {cursor:pointer; }
+ul.tree_menu div {cursor:pointer; }
 ul#tree_menu  ul.tree_menu {display:none;}
-ul.page-list div:hover .item_functions {display:inline;}
+ul.tree_menu div:hover .item_functions {display:inline;}
 .placeholder {
 	background:#AAAAAA;
 }

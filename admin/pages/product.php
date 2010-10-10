@@ -143,4 +143,23 @@ class Product extends AdminModule {
         echo $last_id;
     }
 
+     public static function saveTree() {
+        $data = $_POST;
+        $exp = explode("&",$data['array']);
+        //print_r($exp);
+        
+        $reg ="/list\[([0-9]*)\]=(.*)/is";
+        foreach ($exp as $item) {
+            preg_match_all($reg, $item, $out);
+                $item_id = !empty($out[1][0]) ? $out[1][0] : 0;
+                $parent_id = $out[2][0] == 'root' ? 0 : $out[2][0];
+                $update = array('parent_id'=>$parent_id);
+                //echo $item_id."=>".$parent_id."<br>";
+                $return = DB::update('kazan_market_tree', $update, "id = '$item_id'");
+                var_dump($return);
+
+        }
+
+    }
+
 }

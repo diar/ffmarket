@@ -20,8 +20,7 @@
         <script type="text/javascript" src="/public/js/libs/grid/jquery.jqGrid.ru.js"></script>
         <script type="text/javascript" src="/public/js/libs/grid/jquery.jqGrid.min.js"></script>
         <script type="text/javascript" src="/public/js/libs/jquery.ui.nestedSortable.js"></script>
-        <script type="text/javascript" src="/public/js/libs/interface-1.2.js"></script>
-        <script type="text/javascript" src="/admin/js/inestedsortable.js"></script>
+        
 
 
     </head>
@@ -55,7 +54,9 @@
             	<li><a href="#" class="add_to_tree" rel="0">Добавить раздел</a></li>
             </ul>
             <?php AdminModule::get_tree();?>
-
+            <div>
+                <input type="button" id="save_tree" value="Сохранить структуру" />
+            </div>
         </td>
         <td class="margin"></td>
         <td class="right">
