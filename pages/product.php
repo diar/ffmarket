@@ -45,7 +45,7 @@ class product_Page extends View {
                 $param = 'new';
                 break;
             default :
-                $param = 'null';
+                $param = null;
         }
 
         // Показываем страницу

@@ -84,7 +84,7 @@
                 </div>
             </div>
             <ul class="menu">
-            	<li><a href="/">Все товары</a></li>
+            	<li><a href="/product/list/all">Все товары</a></li>
                 <li><a href="/product/list/new">Новые товары</a></li>
                 <li><a href="/product/list/sale">Товары со скидкой</a></li>
             </ul>
