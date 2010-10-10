@@ -155,8 +155,8 @@ class Product extends AdminModule {
                 $parent_id = $out[2][0] == 'root' ? 0 : $out[2][0];
                 $update = array('parent_id'=>$parent_id);
                 //echo $item_id."=>".$parent_id."<br>";
-                $return = DB::update('kazan_market_tree', $update, "id = '$item_id'");
-                var_dump($return);
+                DB::update('kazan_market_tree', $update, "id = '$item_id'");
+                //var_dump($return);
 
         }
 
