@@ -15,12 +15,13 @@
         <script type="text/javascript" src="/admin/js/lib.js"></script>
         <script type="text/javascript" src="/admin/js/onload.js"></script>
         <script type="text/javascript" src="/admin/js/ajaxForm.js"></script>
-        <script type="text/javascript" src="/engine/libs/ckeditor/ckeditor.js"></script>
-        <script type="text/javascript" src="/engine/libs/filemanager/ajex.js"></script>
+  <!--      <script type="text/javascript" src="/engine/libs/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript" src="/engine/libs/filemanager/ajex.js"></script> -->
         <script type="text/javascript" src="/public/js/libs/grid/jquery.jqGrid.ru.js"></script>
         <script type="text/javascript" src="/public/js/libs/grid/jquery.jqGrid.min.js"></script>
         <script type="text/javascript" src="/public/js/libs/jquery.ui.nestedSortable.js"></script>
         <script type="text/javascript" src="/public/js/libs/interface-1.2.js"></script>
+        <script type="text/javascript" src="/admin/js/inestedsortable.js"></script>
 
 
     </head>

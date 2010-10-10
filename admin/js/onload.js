@@ -1,4 +1,4 @@
-function send(event) {
+function send() {
 //        var current = event[0].my.current;
 //        var parent = event[0].my.parent;
 //        var prev_sibling = event[0].my.prev_sibling;
@@ -51,25 +51,40 @@ $(document).ready(
 		});
 		
 	});
-        $('ul#tree_menu div').live('click',function(){
-            _ul = $(this).parent().find('ul');
-            if (_ul.css('display') == 'none') _ul.show();
-            else _ul.hide();
-        });
-        $('ul#tree_menu').nestedSortable({
-					disableNesting: 'no-nest',
-					forcePlaceholderSize: true,
-					handle: 'div',
-					items: 'li',
-					opacity: .6,
-					placeholder: 'placeholder',
-					tabSize: 25,
-					tolerance: 'pointer',
-					toleranceElement: '> div',
-                                        autoScroll: true,
-                                        onChange : send
+//        $('ul#tree_menu div').live('click',function(){
+//            _ul = $(this).parent().find('ul');
+//            if (_ul.css('display') == 'none') _ul.show();
+//            else _ul.hide();
+//        });
+        $('#tree_menu').NestedSortable(
+	{
+		accept: 'page-item1',
+		noNestingClass: "no-nesting",
+		opacity: .8,
+		helperclass: 'placeholder',
+		onChange: function(serialized) {
+			alert(serialized[0].hash);
+		},
+		autoScroll: true,
+		handle: '.sort-handle'
+	}
+);
 
-				});
+//        $('ul#tree_menu').nestedSortable({
+//					disableNesting: 'no-nest',
+//					forcePlaceholderSize: true,
+//					handle: 'div',
+//					items: 'li',
+//					opacity: .6,
+//					placeholder: 'placeholder',
+//					tabSize: 25,
+//					tolerance: 'pointer',
+//					toleranceElement: '> div',
+//                                        autoScroll: true,
+//                                        onChange:send
+//
+//
+//				});
 });
 
 function add_line(){

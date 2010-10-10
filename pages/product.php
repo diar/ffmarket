@@ -22,7 +22,6 @@ class product_Page extends View {
      */
     public static function viewAction($id) {
         self::$page['header']['content'] = MD_Menu::getProduct($id);
-        Debug::dump(self::$page['header']['content']);
         self::showXSLT('pages/view/index');
     }
 
