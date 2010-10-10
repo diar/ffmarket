@@ -128,6 +128,14 @@
                     <label for="type">Обычный</label>
                 </div>
                 <div class="field">
+                	<input type="checkbox" name="on_main" value="1">
+                        <xsl:if test="root/on_main = 1">
+                            <xsl:attribute name="checked">checked</xsl:attribute>
+                        </xsl:if>
+                    </input>
+                    <label for="type">На витрине</label>
+                </div>
+                <div class="field">
                     <input type="checkbox" name="expired" value="1">
                         <xsl:if test="root/expired = 1">
                             <xsl:attribute name="checked">checked</xsl:attribute>
