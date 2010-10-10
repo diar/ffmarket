@@ -54,7 +54,7 @@
             	<li><a href="#" class="add_to_tree" rel="0">Добавить раздел</a></li>
             </ul>
             <?php AdminModule::get_tree();?>
-            <div>
+            <div class="clear">
                 <input type="button" id="save_tree" value="Сохранить структуру" />
             </div>
         </td>
