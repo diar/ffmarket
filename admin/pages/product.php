@@ -169,6 +169,8 @@ class Product extends AdminModule {
         DB::delete('kazan_market_tree', "id = '$id'");
         DB::delete('kazan_market_tree', "parent_id = '$id'");
         DB::update('kazan_market_products',array('parent_id' => 0) , "parent_id = '$id'");
+        header('location: admin.php?page=product');
+        die();
     }
 
 }
