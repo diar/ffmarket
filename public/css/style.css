@@ -481,3 +481,73 @@ color:#ff6600;
 li > li.active {
     background: green;
 }
+
+
+#copyright {
+    height:115px;
+    background:#000;
+    color:#fff;
+    margin-top:20px;
+    font-size:11px;
+}
+
+#copyright .left {
+    float:left;
+    padding:15px 0 5px 40px;
+    width:290px;
+}
+
+#copyright .left a{
+    color:#FFFFFF;
+}
+
+#copyright .right {
+    float:right;
+    padding:15px 100px 10px 0;
+    color:#FF6600;
+}
+
+
+
+#copyright .right a {
+    color:#fff;
+    vertical-align:top;
+}
+.smi {
+    float:left;
+    padding-top: 18px;
+    padding-left: 10px;
+    font-family: Verdana, Arial, Tahoma;
+    width:300px;
+}
+.smi a{
+    margin-right:10px;
+    color:#fff;
+}
+
+.smi a:hover{
+    color:#FF6600;
+}
+
+
+
+a.social {
+    display:block;
+    float:left;
+    margin-right:10px;
+    width:21px;
+    height:21px;
+    background:url(/public/images/icons/social.jpg) no-repeat;
+}
+a.social.fb {
+    background-position:0 0;
+}
+a.social.lj {
+    background-position:-21px 0;
+}
+a.social.vk {
+    background-position:-42px 0;
+}
+a.social.tw {
+    background-position:-63px 0;
+}

@@ -18,7 +18,7 @@ class settingsSite extends AdminModule {
     }
 
     public static function showList() {
-        $form = Form::newForm('settings','restForm');
+        $form = Form::newForm('settings','settings');
         $form->addfield(
                 array('name' => 'name',
                 'caption' => 'Название сайта',

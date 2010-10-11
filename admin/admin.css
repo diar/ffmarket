@@ -540,3 +540,41 @@ display:inline;
 .field.submit {
 	text-align:right;
 }
+
+
+/***************STATISTICS*****************/
+
+.bg_block {
+    float:left;
+    width: 350px;
+    font-size: 13px;
+    background: #f5f5e9;
+    margin-right: 30px;
+    padding: 20px;
+    line-height: 20px;
+}
+.bg_block .caption {
+    font-size: 16px;
+    padding-bottom: 10px;
+    font-weight: bold;
+
+}
+
+/***************SETTINGS **********************/
+#settings table {
+	width:600px;
+}
+#settings table tr {
+	height:30px;
+}
+
+#settings input[type=text]{
+	width:100%;
+	font-family:"Trebuchet MS",arial;
+	font-size:14px;
+}
+#settings textarea{
+	width:100%;
+	font-family:"Trebuchet MS",arial;
+	font-size:14px;
+}

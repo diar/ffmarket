@@ -9,7 +9,7 @@
     <xsl:template match="root">
         <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
             <head>
-                <title> Доставка пиццы суши и ролл в Казани</title>
+                <title> <xsl:value-of select="//site/title" /></title>
                 <meta name="keywords" content="{site/keywords}" />
                 <meta name="description" content="{site/description}" />
                 <link rel="icon" type="image/vnd.microsoft.icon"  href="/public/images/favicon.ico" />
@@ -97,7 +97,37 @@
             </td>
         </tr>
     </table>
-
+<div id="copyright">
+            <div class="left">&#169; 2010 Diar group
+                <br />
+                <br />Дизайн —
+                <a href="http://bpirok.ru">Большой Пирок</a>
+            </div>
+            <div class="smi">
+                <a href="/{//site/city}/content/about">О проекте</a>
+                <a href="/{//site/city}/content/ads">Реклама</a>
+                <a  href="#" id="callback">Обратная связь</a>
+                <br />
+                <br />
+                При полном или частичном цитировании,
+                заимствовании, использовании ссылка обязательна.
+            </div>
+            <div class="right">
+            	Присоединяйся к нам!
+                <br />
+                <br />
+                <noindex>
+                    <a href="http://www.facebook.com/profile.php?id=100001264771648" class="social fb" title="Мы в FaceBook"></a>
+                </noindex>
+                <noindex>
+                    <a href="http://foodfoodru.livejournal.com/" class="social lj" title="Мы в ЖЖ"></a>
+                </noindex>
+                <a href="http://vkontakte.ru/club16013362 " class="social vk" title="Мы Вконтакте"></a>
+                <noindex>
+                    <a href="http://twitter.com/foodfoodru" class="social tw"  title="Мы в Twitter"></a>
+                </noindex>
+            </div>
+        </div>
     </xsl:template>
 
 

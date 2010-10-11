@@ -25,7 +25,8 @@ class Main extends AdminModule {
     }
 
     public static function showList() {
-        $html = '';
+        $data = '';
+        $html = View::getXSLT($data, 'admin/main_page');
         self::showTemplate($html);
     }
 

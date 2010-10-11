@@ -35,7 +35,7 @@
         <td class="margin"></td>
         <td class="right">
 	       <div class="menu">
-				<a href="#">Настройки сайта</a><a href="#">Структура сайта</a><a href="#">Заказы</a><a href="#">Статистика</a>
+				<a href="admin.php?page=settingsSite">Настройки сайта</a><a href="#">Структура сайта</a><a href="#">Заказы</a><a href="#">Статистика</a>
             </div>
         </td>
     </tr>

@@ -12,8 +12,7 @@ class index_Page extends View {
      */
 
     public static function initController($action) {
-        self::$page['site']['city'] = CityPlugin::getCity();
-        self::$page['site']['keywords'] = 'пицца, суши, роллы, доставка пиццы, доставка суши и роллы Казань';
+      
 
     }
 
