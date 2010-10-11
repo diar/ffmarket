@@ -149,17 +149,17 @@ class Product extends AdminModule {
         //print_r($exp);
         
         $reg ="/list\[([0-9]*)\]=(.*)/is";
+        $z=0;
         foreach ($exp as $item) {
             preg_match_all($reg, $item, $out);
                 $item_id = !empty($out[1][0]) ? $out[1][0] : 0;
                 $parent_id = $out[2][0] == 'root' ? 0 : $out[2][0];
-                $update = array('parent_id'=>$parent_id);
+                $update = array('parent_id'=>$parent_id,'order_by'=>$z);
                 //echo $item_id."=>".$parent_id."<br>";
                 DB::update('kazan_market_tree', $update, "id = '$item_id'");
                 $doc_id = DB::getValue ('kazan_market_tree','doc_id',"id = '$item_id'");
                 DB::update('kazan_market_products', $update, "id = '$doc_id'");
-                //var_dump($return);
-
+                $z++;
         }
 
     }
