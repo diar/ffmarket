@@ -363,7 +363,7 @@ class AdminModule {
 
     public static function get_tree($parent_id = 0) {
         if (DBP::getCount('market_tree', "parent_id = '$parent_id'") > 0) {
-            $query = "SELECT * FROM kazan_market_tree WHERE parent_id = '$parent_id'";
+            $query = "SELECT * FROM kazan_market_tree WHERE parent_id = '$parent_id' ORDER BY order_by";
             $result = mysql_query($query);
             if ($parent_id == 0) $class = 'id="tree_menu"'; else  $class = '';
             echo '<ul class="tree_menu"' . $class .  '>';

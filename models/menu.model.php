@@ -85,7 +85,7 @@ class MD_Menu extends Model {
             $where .=" AND discount > 0";
         if ($param == 'on_main')
             $where .=" AND on_main = 1";
-        $products = self::getAll($where, ' RAND()');
+        $products = self::getAll($where, 'order_by');
 
         foreach ($products as &$item) {
             if (mb_strlen($item['description'], 'UTF-8') > 50) {

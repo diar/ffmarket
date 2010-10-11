@@ -79,7 +79,7 @@ class MD_Market extends Model {
 
     public static function getTree($parent_id = 0,& $out='') {
         if (DB::getCount('kazan_market_tree', "parent_id = '$parent_id' AND doc_id=0") > 0) {
-            $query = "SELECT * FROM kazan_market_tree WHERE parent_id = '$parent_id' AND doc_id=0";
+            $query = "SELECT * FROM kazan_market_tree WHERE parent_id = '$parent_id' AND doc_id=0 ORDER BY order_by";
             $result = mysql_query($query);
             if ($parent_id == 0) $class = 'class="tree_menu" id="tree_menu"'; else  $class = '';
             $out .=  '<ul ' . $class . '>';
