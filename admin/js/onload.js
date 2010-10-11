@@ -84,7 +84,7 @@ $(document).ready(
         });
         $('#save_tree').click(function(){
             serialized = $('ul#tree_menu').nestedSortable('serialize');
-             $.post('/admin/admin.php?page=product&action=saveTree',{'array':serialized},function(data){alert(data);});
+             $.post('/admin/admin.php?page=product&action=saveTree',{'array':serialized},function(data){});
         });
 
     });
