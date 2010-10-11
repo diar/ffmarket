@@ -371,7 +371,7 @@ class AdminModule {
                 echo "<li rel='$row[id]' id='list_$row[id]'><div >$row[title] <span class='item_functions'>";
                 if ($row['doc_id'] > 0)
                 echo "<a href='admin.php?page=product&action=edit&id=$row[doc_id]' ><img src='images/4.jpg' alt='редактировать' /></a>
-                <a href='admin.php?page=product&action=delete&id=$row[doc_id]'><img src='images/5.jpg' alt='удалить' /></a>
+                <a href='admin.php?page=product&action=delete&id=$row[doc_id]' onclick='confirm(\"Хотите удалить?\")'><img src='images/5.jpg' alt='удалить' /></a>
                 ";
                 else
                 echo "<a href='#' class='add_to_tree' rel='$row[id]'><img src='images/1.jpg' alt='Добавить раздел' /></a>
