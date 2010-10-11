@@ -64,6 +64,15 @@ class settingsSite extends AdminModule {
                 'value' => Config::getValue('site', 'email')
                 )
         );
+         $form->addfield(
+                array('name' => 'phone',
+                'caption' => 'Телефон магазина',
+                'pattern' => 'text',
+                'maxlength' => '255',
+                'css_class' => 'caption',
+                'value' => Config::getValue('site', 'phone')
+                )
+        );
         $form->addfield(array('name' => 'edit',
 
                 'caption' => 'Сохранить',

@@ -562,3 +562,10 @@ a.social.vk {
 a.social.tw {
     background-position:-63px 0;
 }
+
+
+/**********CONTENT ****************/
+.content_text {
+	width:80%;
+	padding-left:25px;
+}

@@ -50,7 +50,7 @@
         </td>
         <td class="margin"></td>
         <td class="right">
-	        <div class="telephone">Телефон магазина: +7 (843) 5700 921</div>
+	        <div class="telephone">Телефон магазина: <xsl:value-of select="//site/phone" /></div>
         	<div class="banner">
 				<img src="/public/images/banner.jpg" alt="banner" />
             </div>
@@ -133,7 +133,7 @@
 
 
 <xsl:template match="content_menu/item">
-				<a href="/page/{content_uri}"><xsl:value-of select="content_title" /></a>
+				<a href="/page/view/{content_uri}"><xsl:value-of select="content_title" /></a>
 </xsl:template>
 
     
