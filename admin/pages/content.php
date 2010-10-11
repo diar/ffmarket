@@ -13,7 +13,7 @@ class content extends AdminModule {
 
     public static function add() {
         $form = Form::newForm('content','settings',self::getDbTable());
-
+        
         $form->addfield(array('name' => 'content_title',
                 'caption' => 'Название',
                 'pattern' => 'text',
@@ -50,7 +50,7 @@ class content extends AdminModule {
                 'css_class' => 'ui_button',
                 'pattern' => 'submit')
         );
-
+       
         self::validate($form);
     }
 
@@ -141,7 +141,8 @@ class content extends AdminModule {
                 array('title'=>'Управление')
                 )
         );
-        self::showTemplate($list);
+         $add = '<div><br /><a href="admin.php?page=content&action=add">Добавить страницу</a></div>';
+        self::showTemplate($list.$add);
     }
 
     public static function showJSON() {
