@@ -376,7 +376,7 @@ class AdminModule {
                 else
                 echo "<a href='#' class='add_to_tree' rel='$row[id]'><img src='images/1.jpg' alt='Добавить раздел' /></a>
                 <a href='admin.php?page=product&action=add&parent_id=$row[id]'><img src='images/add_product.jpg' alt='Добавить раздел' /></a>
-                <a href='admin.php?page=product&action=deleteCategory&id=$row[id]'><img src='images/5.jpg' alt='удалить' /></a>
+                <a href='admin.php?page=product&action=deleteCategory&id=$row[id]' onclick='confirm(\"Хотите удалить?\")'><img src='images/5.jpg' alt='удалить' /></a>
                 ";
                 echo '</span></div>';
                 self::get_tree($row['id']); //recursive
