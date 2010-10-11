@@ -156,10 +156,19 @@ class Product extends AdminModule {
                 $update = array('parent_id'=>$parent_id);
                 //echo $item_id."=>".$parent_id."<br>";
                 DB::update('kazan_market_tree', $update, "id = '$item_id'");
+                $doc_id = DB::getValue ('kazan_market_tree','doc_id',"id = '$item_id'");
+                DB::update('kazan_market_products', $update, "id = '$doc_id'");
                 //var_dump($return);
 
         }
 
+    }
+
+    public static function deleteCategory() {
+        $id = ELEMENT_ID;
+        DB::delete('kazan_market_tree', "id = '$id'");
+        DB::delete('kazan_market_tree', "parent_id = '$id'");
+        DB::update('kazan_market_products',array('parent_id' => 0) , "parent_id = '$id'");
     }
 
 }
