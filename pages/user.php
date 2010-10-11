@@ -160,8 +160,8 @@ class user_Page extends View {
             $trash = $_SESSION['trash'];
             unset($_SESSION['trash']);
             foreach ($trash as $item) {
-                if ($item['item_id'] != $_POST['item_id'] && $item['size'] != $_POST['size']) {
-                    array_push($_SESSION['trash'][$z], $item);
+                if ($item['item_id'] != $_POST['item_id']) {
+                    $_SESSION['trash'][$z] = $item;
                     $z++;
                 }
                 
@@ -170,6 +170,18 @@ class user_Page extends View {
             //print_r($_SESSION);
         }
     }
+
+    public static function trashInfoAjaxAction() {
+       $trash = !empty($_SESSION['trash']) ? $_SESSION['trash'] : null;
+        if (sizeof($trash) > 0) {
+            $gen_price = 0;
+            foreach ($trash AS $item) {
+                $gen_price+=$item['price'] * $item['count'];
+            }
+        } else $gen_price = 0;
+        echo '<a href="/user/trash">Корзина</a><br>Заказ на <span id="trash_gen_price">'.$gen_price.'</span> Р';
+    }
+
     /**
      * Выход
      */

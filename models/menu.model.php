@@ -96,6 +96,7 @@ class MD_Menu extends Model {
             $item['price'] = $price[0]['price'];
             if ($item['discount'] > 0)
                 $item['discount_price'] = $item['price'] - ($item['price'] * ($item['discount'] / 100));
+            $item['tmb_image'] = !empty($item['tmb_image']) ? $item['tmb_image'] : 'no_image.jpg';
         }
         return $products;
     }

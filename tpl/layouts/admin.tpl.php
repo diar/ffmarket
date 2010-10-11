@@ -14,9 +14,8 @@
         <script type="text/javascript" src="/admin/js/jquery.form.js"></script>
         <script type="text/javascript" src="/admin/js/lib.js"></script>
         <script type="text/javascript" src="/admin/js/onload.js"></script>
-        <script type="text/javascript" src="/admin/js/ajaxForm.js"></script>
-  <!--      <script type="text/javascript" src="/engine/libs/ckeditor/ckeditor.js"></script>
-        <script type="text/javascript" src="/engine/libs/filemanager/ajex.js"></script> -->
+     <script type="text/javascript" src="/engine/libs/ckeditor/ckeditor.js"></script>
+       <script type="text/javascript" src="/engine/libs/filemanager/ajex.js"></script>
         <script type="text/javascript" src="/public/js/libs/grid/jquery.jqGrid.ru.js"></script>
         <script type="text/javascript" src="/public/js/libs/grid/jquery.jqGrid.min.js"></script>
         <script type="text/javascript" src="/public/js/libs/jquery.ui.nestedSortable.js"></script>
@@ -35,7 +34,7 @@
         <td class="margin"></td>
         <td class="right">
 	       <div class="menu">
-				<a href="admin.php?page=settingsSite">Настройки сайта</a><a href="#">Структура сайта</a><a href="#">Заказы</a><a href="#">Статистика</a>
+				<a href="admin.php?page=settingsSite">Настройки сайта</a><a href="admin.php?page=content">Структура сайта</a><a href="#">Заказы</a><a href="admin.php">Статистика</a>
             </div>
         </td>
     </tr>

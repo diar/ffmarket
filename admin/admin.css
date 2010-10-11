@@ -561,20 +561,21 @@ display:inline;
 }
 
 /***************SETTINGS **********************/
-#settings table {
-	width:600px;
+#settings table.form_table {
+    width: 800px;
 }
 #settings table tr {
 	height:30px;
 }
 
 #settings input[type=text]{
-	width:100%;
+	width:80%;
 	font-family:"Trebuchet MS",arial;
 	font-size:14px;
 }
 #settings textarea{
-	width:100%;
+	width:80%;
 	font-family:"Trebuchet MS",arial;
 	font-size:14px;
+	height:150px;
 }

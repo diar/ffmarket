@@ -55,7 +55,8 @@
 				<img src="/public/images/banner.jpg" alt="banner" />
             </div>
             <div class="menu">
-				<a href="#">Помощь</a><a href="#">Доставка</a><a href="#">Оплата</a><a href="#">Точки самовывоза</a><a href="#">Оптовая продажа</a>
+            <xsl:apply-templates select="content_menu/item" />
+
             </div>
         </td>
     </tr>
@@ -131,7 +132,9 @@
     </xsl:template>
 
 
-
+<xsl:template match="content_menu/item">
+				<a href="/page/{content_uri}"><xsl:value-of select="content_title" /></a>
+</xsl:template>
 
     
 </xsl:stylesheet>

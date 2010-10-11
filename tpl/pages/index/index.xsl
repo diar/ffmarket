@@ -26,9 +26,17 @@
 
     <xsl:template match="products/item"> 
         <div class="item" id="dish_{id}" >
+            <xsl:choose>
+                <xsl:when test="type = 'Новый продукт'">
+                	<xsl:attribute name="class">item new</xsl:attribute>
+                </xsl:when>
+                <xsl:when test="type = 'Рекомендовано'">
+	                <xsl:attribute name="class">item recomended</xsl:attribute>
+                </xsl:when>
+            </xsl:choose>
                     <div class="foto">
                         <a href="/product/view/{url}">
-                            <img src="/upload/images/products/tmb/{tmb_image}" alt="Ортаги э карни" />
+                            <img src="/upload/images/products/tmb/{tmb_image}" alt="{title}" />
                         </a>
                     </div>
                     <div class="title">
@@ -40,6 +48,9 @@
                     <xsl:choose>
                     	<xsl:when test="discount > 0">
                         <div class="sale"><span><xsl:value-of select="price" /></span> <xsl:value-of select="discount_price" /> Р</div>
+                        </xsl:when>
+                        <xsl:when test="expired =1">
+                        <div class="sale">Нет в наличии</div>
                         </xsl:when>
                         <xsl:otherwise>
                         <div class="price"><xsl:value-of select="price" /> Р</div>

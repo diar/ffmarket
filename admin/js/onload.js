@@ -1,16 +1,3 @@
-function send() {
-    //        var current = event[0].my.current;
-    //        var parent = event[0].my.parent;
-    //        var prev_sibling = event[0].my.prev_sibling;
-    alert(1);
-//        $.ajax({
-//                type: "POST",
-//                async: false,
-//                url: "/ajax-move-node",
-//                data: "parent="+parent+"&current="+current+"&prev_sibling="+prev_sibling
-//        });
-}
-
 $(document).ready(
     function() {
 

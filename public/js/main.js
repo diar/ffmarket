@@ -30,7 +30,7 @@ $(document).ready(function () {
             'count':count,
             'is_present':is_present
         },function(data){
-            //$("#trash_gen_price").html(data);
+            getTrashInfo();
             });
         return false;
     });
@@ -109,3 +109,13 @@ function preparePrice () {
     if (p_present) p_price = p_price+200;
     $("#price").html(p_price);
 }
+
+function getTrashInfo(){
+	$.post('/user/trashInfo/',
+    {
+		'post' : 1
+    },function(data){
+       $("#trash").empty().html(data);
+    });
+	
+	}

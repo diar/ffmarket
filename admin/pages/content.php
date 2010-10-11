@@ -4,16 +4,15 @@ require_once "adminModule.class.php";
 class content extends AdminModule {
 
     protected static $_title = "Страницы";
-    protected static $_DB_table = 'content';
+    protected static $_DB_table = 'market_content';
 
     public static function initModule () {
-        self::setRestId($_SESSION['admin']['restaurant_id']);
         self::addAction('add', 'Добавить страницу',7,true);
         self::start();
     }
 
     public static function add() {
-        $form = Form::newForm('content','restForm',self::getDbTable());
+        $form = Form::newForm('content','settings',self::getDbTable());
 
         $form->addfield(array('name' => 'content_title',
                 'caption' => 'Название',
@@ -22,6 +21,18 @@ class content extends AdminModule {
                 'maxlength' => '255',
                 'css_class' => 'caption')
         );
+        $form->addfield(array(
+            'name' => 'content_parent_id',
+            'caption' => 'Раздел',
+            'pattern' => 'select',
+            'css_class' => 'caption',
+            'multiple' => false,
+            'size' => '1',
+            'options' => array_merge(
+                    array(0 => "Корневая"),
+                    Form::array_combine(DB::fetchAll('SELECT id,content_title FROM `market_content`'))
+            )
+        ));
         $form->addfield(array('name' => 'content_uri',
                 'caption' => 'Uri страницы',
                 'pattern' => 'text',
@@ -48,10 +59,10 @@ class content extends AdminModule {
         if (!empty($_POST)) {
             $record = $_POST;
         } else {
-            $record = DB::getRecord('content',"id =".$id);
+            $record = DB::getRecord('market_content',"id =".$id);
         }
 
-        $form = Form::newForm('content','posterForm',self::getDbTable());
+        $form = Form::newForm('market_content','settings',self::getDbTable());
 
         $form->addfield(array('name' => 'content_title',
                 'caption' => 'Название',
@@ -69,6 +80,19 @@ class content extends AdminModule {
                 'maxlength' => '255',
                 'css_class' => 'caption')
         );
+         $form->addfield(array(
+            'name' => 'content_parent_id',
+            'caption' => 'Раздел',
+            'pattern' => 'select',
+            'css_class' => 'caption',
+            'multiple' => false,
+            'size' => '1',
+             'selected' => $record['content_parent_id'],
+            'options' => array_merge(
+                    array(0 => "Корневая"),
+                    Form::array_combine(DB::fetchAll('SELECT id,content_title FROM `market_content`'))
+            )
+        ));
         $form->addfield(array('name' => 'content_text',
                 'caption' => 'Текст',
                 'value' => $record['content_text'],
@@ -86,24 +110,16 @@ class content extends AdminModule {
     }
 
     public static function save() {
-        $data = array();
-        unset($_POST['submit']);
         $data = $_POST;
-        DB::insert('content',$data);
+        DB::insert('market_content',$data);
     }
 
     public static function saveEdit() {
-        $data = array();
         $id = ELEMENT_ID;
-        unset($_POST['edit']);
         unset($_POST['id']);
         $data = $_POST;
-        DB::update('content',$data,'id ='.$id);
+        DB::update('market_content',$data,'id ='.$id);
 
-    }
-
-    public static function apply() {
-        return true;
     }
 
     public static function delete() {
@@ -129,7 +145,8 @@ class content extends AdminModule {
     }
 
     public static function showJSON() {
-        $records = DB::getRecords("content", null, null, Array('select'=>'id,content_uri,content_title'));
+        Debug::disable();
+        $records = DB::getRecords("market_content", null, null, Array('select'=>'id,content_uri,content_title'));
 
         foreach ($records as &$record) {
             $editLink = self::getLink(PAGE, 'edit', $record['id']);

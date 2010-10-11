@@ -76,7 +76,6 @@ class Debug {
         } else {
             self::$_enabled = false;
         }
- self::$_enabled = true;
         self::$_startTime = $_SERVER['REQUEST_TIME'];
     }
 

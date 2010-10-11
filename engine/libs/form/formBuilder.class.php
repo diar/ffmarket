@@ -116,7 +116,7 @@ class FormBuilder {
             $this->_html .= "<div id='formError'>$errors</div>";
         }
 
-        $this->_html .= '<form name="' . $this->_config->formName . '" method="' . $this->_config->_formMethod . '" enctype="' . $this->_config->_formEnctype . '" id="' . $this->_config->_formID . '"><table>';
+        $this->_html .= '<form name="' . $this->_config->formName . '" method="' . $this->_config->_formMethod . '" enctype="' . $this->_config->_formEnctype . '" id="' . $this->_config->_formID . '"><table class="form_table">';
         $this->_html .= $this->_form;
         $this->_html .= '</table></form>';
         if ($this->_script) {
