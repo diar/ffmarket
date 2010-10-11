@@ -36,6 +36,7 @@ $(document).ready(function () {
     });
     //
     $("a.active",$("#tree_menu")).parents('li').children("a").attr('class','active');
+	$("a.active",$("#tree_menu")).parents('li').children("div").attr('class','active');
 
 
         

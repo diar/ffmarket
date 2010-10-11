@@ -86,7 +86,9 @@ class MD_Market extends Model {
             while ($row = mysql_fetch_array($result)) {
                 if (Router::GetRouteIndex(3) == 'category' && Router::GetRouteIndex(4) == $row['id']) $active = 'class="active"';
                 else $active = '';
+                if (DB::getCount('kazan_market_products', "parent_id = '$row[id]'") > 0)
                 $out .= "<li><a href='/product/list/category/$row[id]' $active >$row[title]</a>";
+                else  $out .= "<li><div $active >$row[title]</div>";
                 self::getTree($row['id'],$out); //recursive
                 $out .= "</li>";
                 
