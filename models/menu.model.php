@@ -88,8 +88,8 @@ class MD_Menu extends Model {
         $products = self::getAll($where, 'order_by');
 
         foreach ($products as &$item) {
-            if (mb_strlen($item['description'], 'UTF-8') > 50) {
-                $item['description'] = mb_substr($item['description'], 0, 50, 'UTF-8') . '...';
+            if (mb_strlen($item['description'], 'UTF-8') > 40) {
+                $item['description'] = mb_substr($item['description'], 0, 40, 'UTF-8') . '...';
             }
 
             $price = unserialize($item['size_price']);
