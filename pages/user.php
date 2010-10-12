@@ -148,7 +148,6 @@ class user_Page extends View {
             }
         }
         self::$page['header']['content']['user'] = DB::getRecord('user_additional',"user_id = '$_SESSION[user_id]'");
-        Debug::dump(self::$page['header']['content']['user']);
         self::$page['header']['content']['message'] = $message;
         self::$page['header']['content']['itog'] = $itog;
         self::$page['header']['content']['trash'] = $trash;
