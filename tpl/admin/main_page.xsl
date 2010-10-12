@@ -9,7 +9,7 @@
     <xsl:template match="/">
     
         <div class="title">Статистика</div>
-        <div class="bg_block products">
+        <div class="bg_block s_products">
             <div class="caption">Продукты</div>
             <div>
                 <span>Всего на сайте:</span><br/>
@@ -22,7 +22,7 @@
                 <span>Средняя цена:</span><br/>
             </div>
         </div>
-        <div class="bg_block orders">
+        <div class="bg_block s_orders">
             <div class="caption">Заказы</div>
             <div>
                 <span>Всего:</span><br/>
@@ -33,7 +33,7 @@
                 <span>Не выполненные:</span><br/>
             </div>
         </div>
-        <div class="bg_block clients">
+        <div class="bg_block s_clients">
             <div class="caption">Клиенты</div>
             <span>Всего:</span><br/>
             <span>Мужчины:</span><br/>
