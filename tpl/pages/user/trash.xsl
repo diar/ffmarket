@@ -64,7 +64,7 @@
             </div>
             
             <div class="trash_itogo">Итого с доставкой: <span id="itog"><xsl:value-of select="itog" /></span> Р</div>
-            <div class="trash_rules">Нажимая кнопку “Купить” Вы соглашаетесь с нашими <a href="/page/view/rules">правилами</a> магазина</div>
+            <div class="trash_rules">Нажимая кнопку “Купить” Вы соглашаетесь с нашими <a href="/page/view/rules" target="_blank">правилами</a> магазина</div>
             
             <div class="trash_buy_button">
             	<input type="submit" value="Купить" id="buy" />

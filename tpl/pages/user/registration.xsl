@@ -31,7 +31,7 @@
                     <label for="login">Имя</label><br />
                     <input type="text" name="name" id="name" />
                 </div>
-                <div class="field" style="text-align:center;"><input type="checkbox" id="apply" name="apply" value="1" /> Ознакомлен с <a href="/page/view/rules">правилами</a> </div>
+                <div class="field" style="text-align:center;"><input type="checkbox" id="apply" name="apply" value="1" /> Ознакомлен с <a href="/page/view/rules" target="_blank">правилами</a> </div>
                 <div class="field" style="text-align:center;">
 	                <input type="submit" name="submit" value="Зарегистрироваться" />
                 </div>
