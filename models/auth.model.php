@@ -42,7 +42,8 @@ class MD_Auth extends Model {
                 'user_ip_register'=>DB::quote(Router::getClientIp()),
                 ), false);
         $text = 'Вы зарегистрировались на сайте ffmarker.ru. Ваш пароль '.$password;
-        Mail::newMail($text, $mail, 'Регистрация на сайте ffmarket.ru');
+        mail($mail, 'Регистрация на сайте ffmarket.ru',$text,'From: FFMarket.ru <noreply@ffmarket.ru>' );
+        //Mail::newMail($text, $mail, 'Регистрация на сайте ffmarket.ru');
         self::login($mail, $password, false);
         return "OK";
     }

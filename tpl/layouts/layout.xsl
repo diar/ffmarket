@@ -113,11 +113,6 @@
                 <a href="http://bpirok.ru">Большой Пирок</a>
             </div>
             <div class="smi">
-                <a href="/{//site/city}/content/about">О проекте</a>
-                <a href="/{//site/city}/content/ads">Реклама</a>
-                <a  href="#" id="callback">Обратная связь</a>
-                <br />
-                <br />
                 При полном или частичном цитировании,
                 заимствовании, использовании ссылка обязательна.
             </div>
