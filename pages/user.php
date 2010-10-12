@@ -134,8 +134,8 @@ class user_Page extends View {
             $get_myself = !empty($_POST['get_myself']) ? 1 : 0;
             $message = MD_Market::order($_POST['phone'], $_POST['address'], $get_myself ,$date_time);
             self::$page['header']['content']['message'] = 'Заказ принят. Скоро с Вами свяжуться';
-        } elseif (empty($_POST['phone']) && empty ($_POST['address'])){
-            //$message = 'Заполните пожалуйста поля телефон и адрес.';
+        } elseif (empty($_POST['phone']) && empty ($_POST['address']) && !empty($_POST)){
+            $message = 'Заполните пожалуйста поля телефон и адрес.';
         }
         
         $itog = 0;

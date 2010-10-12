@@ -66,16 +66,16 @@ class MD_Market extends Model {
             'get_myself' => $get_myself == 1 ? 1 : 0
         );
         //Добавление или изменении данных о пользователе - телефон и адресс доставки
-        $data = array(
+        $data_additional = array(
             'market_address' => $address,
             'market_phone' => String::toPhone($phone),
             'user_id' => $user_id
         );
         $inDB = DB::getCount('user_additional', "user_id = '$user_id'");
             if ($inDB) {
-                DB::update('user_additional', $data, "user_id = '$user_id'");
+                DB::update('user_additional', $data_additional, "user_id = '$user_id'");
             } else {
-                DB::insert('user_additional', $data);
+                DB::insert('user_additional', $data_additional);
             }
         ////////////////////////////////////////////////
         DB::insert('kazan_market_orders', $data,FALSE);
