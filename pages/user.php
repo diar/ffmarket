@@ -78,7 +78,7 @@ class user_Page extends View {
                     $error = 'Введите e-mail';
                     break;
                 case 'OK':
-                    $error = 'Пароль выслан';
+                    $error = '<span style="color:#ff9900">Пароль выслан</span>';
                     break;
                 case 'LOGIN':
                     $error = 'Неверный логин';
