@@ -105,7 +105,7 @@ class user_Page extends View {
                         $error = 'Заполните все поля предложенной формы';
                         break;
                     case 'OK':
-                        $error = 'Регистрация прошла успешно, пароль выслан на e-mail';
+                        $error = '<span style="color: #009900;">Регистрация прошла успешно, пароль выслан на e-mail</span>';
                         break;
                     case 'NOT_MAIL':
                         $error = 'Неверный адрес электронный почты';

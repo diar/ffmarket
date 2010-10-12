@@ -97,7 +97,7 @@
                 <input type="number" class="count" value="{count}"/> шт.
                 <div class="price_per_one" style="display:none;"><xsl:value-of select="price" /></div>
                 </td>
-                <td class="price"><span class="gen_price"><xsl:value-of select="price" /></span> Р</td>
+                <td class="price"><span class="gen_price"><xsl:value-of select="gen_price" /></span> Р</td>
                 <td class="functions">
                 <input type="hidden" class="item_id" value="{item_id}" />
                 <input type="hidden" class="size" value="{size}" />

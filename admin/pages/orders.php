@@ -66,6 +66,7 @@ class orders extends AdminModule {
             $item['items'] = unserialize($item['items']);
             $item['gen_price'] = 0;
             foreach ($item['items'] as &$product) {
+                $product['gen_price'] = $product['price']*$product['count'];
                 $item['gen_price'] +=$product['price']*$product['count'];
                 $product['tmb_image'] = DB::getValue('kazan_market_products', 'tmb_image', "id = '$product[item_id]'");
             }

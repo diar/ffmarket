@@ -20,7 +20,7 @@ class MD_Market extends Model {
      * Оформление заказа
      * @return array
      */
-    public static function order($phone, $address, $get_myself ,$date_time) {
+    public static function order($phone, $address, $get_myself ,$date_time,$now = 0) {
         // Проверяем номер телефона
         if (!$phone = String::toPhone($phone))
             $error = "Введите номер телефона в правильном формате";
@@ -63,7 +63,8 @@ class MD_Market extends Model {
             'phone' => String::toPhone($phone),
             'ip' => DB::quote(Router::getClientIp()),
             'user_id' => intval($_SESSION['user_id']),
-            'get_myself' => $get_myself == 1 ? 1 : 0
+            'get_myself' => $get_myself == 1 ? 1 : 0,
+            'delivery_time' => $date_time,
         );
         //Добавление или изменении данных о пользователе - телефон и адресс доставки
         $data_additional = array(

@@ -37,7 +37,7 @@ class Mail {
     public static function newMail ($body,$address,$subject) {
         $mail = new PHPMailer ();
         $mail->IsMail();
-        $mail->SetFrom('noreply@foodfood.ru', Config::getValue('site','name'));
+        $mail->SetFrom('noreply@ffmarket.ru', Config::getValue('site','name'));
         $mail->AddAddress($address);
         $mail->Subject = $subject;
         $mail->MsgHTML($body);
