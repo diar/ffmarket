@@ -54,7 +54,7 @@ class MD_Market extends Model {
         $on = implode (',', $unique);
         DB::update('kazan_market_products', array('orders_count'=>'orders_count+1'), "id IN ($on)",FALSE);
 
-        return true;
+
         $data = array(
             'items' => DB::quote(serialize($items)),
             'status' => 1,
