@@ -21,7 +21,7 @@
         <div class="auth_form">
         	
             <div class="formField">
-	            <div class="error"><xsl:value-of select="message" /></div>
+	            <div class="error"><xsl:value-of select="message" disable-output-escaping="yes" /></div>
                 <form action="/user/remember" method="post">
                 <div class="field">
                     <label for="login">E-Mail</label><br />
