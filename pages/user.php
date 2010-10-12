@@ -83,6 +83,8 @@ class user_Page extends View {
                 case 'LOGIN':
                     $error = 'Неверный логин';
                     break;
+                default:
+                    $error = $response;
             }
         }
         self::$page['header']['content']['message'] = $error;
