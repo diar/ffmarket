@@ -86,6 +86,7 @@ class user_Page extends View {
                 default:
                     $error = $response;
             }
+             $error = $response;
         }
         self::$page['header']['content']['message'] = $error;
         self::showXSLT('pages/user/remember');
