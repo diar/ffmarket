@@ -41,7 +41,7 @@ class orders extends AdminModule {
     public static function showList() {
 
         $data['orders'] = self::getOrders();
-        Debug::dump($data);
+        //Debug::dump($data);
         $html = View::getXSLT($data, 'admin/orders');
         self::showTemplate($html);
     }
