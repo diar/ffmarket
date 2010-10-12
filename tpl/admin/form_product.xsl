@@ -65,11 +65,6 @@
                             <tr>
                                 <td><input type="text" name="size[]"  /></td>
                                 <td><input type="text" name="price[]" /></td>
-                                <td><div class="function_line del_line" >-</div></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" name="size[]"  /></td>
-                                <td><input type="text" name="price[]" /></td>
                                 <td><div class="function_line add_line" >+</div></td>
                             </tr>
                         </xsl:otherwise>

@@ -45,10 +45,10 @@ class user_Page extends View {
 
             switch ($login) {
                 case 'SPACE':
-                    $error = 'Заполните поле телефон и пароль';
+                    $error = 'Заполните поле e-mail и пароль';
                     break;
                 case 'NOT_EXIST':
-                    $error = 'Неверный логин или пароль';
+                    $error = 'Неверный e-mail или пароль';
                     break;
                 case 'OK':
                     Router::setPage('/');

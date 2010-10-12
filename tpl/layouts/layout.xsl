@@ -133,7 +133,7 @@
 
 
 <xsl:template match="content_menu/item">
-				<a href="/page/view/{content_uri}"><xsl:value-of select="content_title" /></a>
+    <a href="/page/view/{content_uri}"><xsl:value-of select="content_title" /></a>
 </xsl:template>
 
     
