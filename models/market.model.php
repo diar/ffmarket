@@ -54,7 +54,7 @@ class MD_Market extends Model {
         $on = implode (',', $unique);
         DB::update('kazan_market_products', array('orders_count'=>'orders_count+1'), "id IN ($on)",FALSE);
 
-
+        $user_id = intval($_SESSION['user_id']);
         $data = array(
             'items' => DB::quote(serialize($items)),
             'status' => 1,
@@ -65,7 +65,19 @@ class MD_Market extends Model {
             'user_id' => intval($_SESSION['user_id']),
             'get_myself' => $get_myself == 1 ? 1 : 0
         );
-
+        //Добавление или изменении данных о пользователе - телефон и адресс доставки
+        $data = array(
+            'market_address' => $address,
+            'market_phone' => String::toPhone($phone),
+            'user_id' => $user_id
+        );
+        $inDB = DB::getCount('user_additional', "user_id = '$user_id'");
+            if ($inDB) {
+                DB::update('user_additional', $data, "user_id = '$user_id'");
+            } else {
+                DB::insert('user_additional', $data);
+            }
+        ////////////////////////////////////////////////
         DB::insert('kazan_market_orders', $data,FALSE);
         $admin_phone = String::toPhone('79503176167');
         $text = 'Новый заказ';

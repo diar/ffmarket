@@ -72,7 +72,7 @@ class View {
         // Показываем страницу
         self::$page['trash']['price'] = $gen_price;
         self::$page['header']['tree'] = $tree;
-        self::$page['header']['content_menu'] = DB::getRecords('market_content','content_parent_id=0');
+        self::$page['header']['content_menu'] = DB::getRecords('market_content','content_parent_id=0 AND on_menu = 1');
         self::$page['user'] = User::getParams();
         self::$page['date_today']['year'] = String::getDate();
         self::$page['date_today']['month'] = String::toMonth(date('m'));

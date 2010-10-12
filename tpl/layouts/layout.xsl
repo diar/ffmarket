@@ -63,7 +63,8 @@
     <tr class="menu">
     	<td></td>
         <td></td>
-        <td class="lk_menu"><xsl:if test="//user/is_auth = 1"><a href="/user/view/{//user/user_id}"><xsl:value-of select="//user/user_login" /></a>, <a href="/user/logout">выход</a></xsl:if></td>
+        <td class="lk_menu">
+        <xsl:if test="//user/is_auth = 1"><a href="/user/view/{//user/user_id}"><xsl:value-of select="//user/user_login" /></a>, <a href="/user/logout">выход</a></xsl:if></td>
     </tr>
     <tr class="body">
     	<td class="left">
@@ -72,8 +73,15 @@
                 <xsl:choose>
                 	<xsl:when test="//user/is_auth = 1">
                     <div id="trash">
-                        <a href="/user/trash">Корзина</a><br />
-						<xsl:if test="//trash/price > 0">Заказ на <span id="trash_gen_price"><xsl:value-of select="//trash/price" /></span> Р</xsl:if>
+                        <xsl:choose>
+                        	<xsl:when test="//trash/price > 0">
+                                <a href="/user/trash">Корзина</a><br />
+                                Заказ на <span id="trash_gen_price"><xsl:value-of select="//trash/price" /></span> Р
+                            </xsl:when>
+                            <xsl:otherwise>
+	                            Корзина пуста
+                            </xsl:otherwise>
+                         </xsl:choose>    
                     </div>
                  	</xsl:when>
                     <xsl:otherwise>

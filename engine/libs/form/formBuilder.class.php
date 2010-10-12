@@ -340,7 +340,7 @@ class FormBuilder {
 
     public function field_checkbox_build($field) {
         $checked = !empty($field['checked']) && $field['checked'] ? ' checked="true" ' : '';
-        $this->_form.= '<tr><td ' . $field['css_id'] . ' ' . $field['css_class'] . '>' . $field['caption'] . '</td><td><input type="checkbox" ' . $checked . ' name="' . $field['name'] . '" value="false"></td></tr>';
+        $this->_form.= '<tr><td ' . $field['css_id'] . ' ' . $field['css_class'] . '>' . $field['caption'] . '</td><td><input type="checkbox" ' . $checked . ' name="' . $field['name'] . '" value="' . $field['value'] . '"></td></tr>';
     }
 
     public function field_select_build($field) {

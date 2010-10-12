@@ -45,6 +45,15 @@ class content extends AdminModule {
                 'pattern' => 'editor')
         );
 
+        $form->addfield(array('name' => 'on_menu',
+                'caption' => 'Учавствует в меню',
+                'pattern' => 'checkbox',
+                'maxlength' => '255',
+                'css_class' => 'caption',
+                'value' => 1
+            )
+        );
+
         $form->addfield(array('name' => 'submit',
                 'caption' => 'Добавить',
                 'css_class' => 'ui_button',
@@ -99,6 +108,16 @@ class content extends AdminModule {
                 'pattern' => 'editor')
         );
 
+        $form->addfield(array('name' => 'on_menu',
+                'caption' => 'Учавствует в меню',
+                'pattern' => 'checkbox',
+                'maxlength' => '255',
+                'css_class' => 'caption',
+                'value' => '1',
+                'checked' => !empty($record['on_menu']) ? true : false
+            )
+        );
+
         $form->addfield(array('name' => 'edit',
 
                 'caption' => 'Сохранить',
@@ -118,6 +137,7 @@ class content extends AdminModule {
         $id = ELEMENT_ID;
         unset($_POST['id']);
         $data = $_POST;
+        $data['on_menu'] = !empty($data['on_menu']) ? 1 : 0;
         DB::update('market_content',$data,'id ='.$id);
 
     }

@@ -31,9 +31,9 @@
             <form method="post" action="/user/trash">
             <div class="title">Доставка по Казани (бесплатно)</div>
             <div class="trash_form">
-            	<div class="phone">Контактный телефон: <input type="text" id="phone" name="phone" /></div>
+            	<div class="phone">Контактный телефон: <input type="text" id="phone" name="phone" value="{user/market_phone}"/></div>
                 <div class="address">Адрес:<br />
-				<textarea name="address" id="address"></textarea>
+				<textarea name="address" id="address"><xsl:value-of select="user/market_address" /></textarea>
                 </div>
 				<div class="time">Удобное время: 
                 <input type="text" id="day" name="day" value="{//date_today/day}" /> 
@@ -64,7 +64,7 @@
             </div>
             
             <div class="trash_itogo">Итого с доставкой: <span id="itog"><xsl:value-of select="itog" /></span> Р</div>
-            <div class="trash_rules">Нажимая кнопку “Купить” Вы соглашаетесь с нашими <a href="#">правилами</a> магазина</div>
+            <div class="trash_rules">Нажимая кнопку “Купить” Вы соглашаетесь с нашими <a href="/page/view/rules">правилами</a> магазина</div>
             
             <div class="trash_buy_button">
             	<input type="submit" value="Купить" id="buy" />
