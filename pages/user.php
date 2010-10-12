@@ -107,7 +107,8 @@ class user_Page extends View {
                         $error = 'Заполните все поля предложенной формы';
                         break;
                     case 'OK':
-                        $error = '<span style="color: #009900;">Регистрация прошла успешно, пароль выслан на e-mail</span>';
+                        //$error = '<span style="color: #009900;">Регистрация прошла успешно, пароль выслан на e-mail</span>';
+                        Router::setPage('/');
                         break;
                     case 'NOT_MAIL':
                         $error = 'Неверный адрес электронный почты';
