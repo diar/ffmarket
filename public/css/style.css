@@ -166,18 +166,18 @@ ul.tree_menu li ul a.active {
     min-width:200px;
     position:relative;
     width:12.5em;
-    height: 298px;
+    height: 318px;
 	overflow:hidden;
 }
 #list .item.recomended{
 border:2px solid #ff6600;
 padding:2px;
-height:288px;
+height:310px;
 }
 #list .item.new{
 border:2px solid #009900;
 padding:2px;
-height:290px;
+height:310px;
 }
 #list .item .foto{
     width: 200px;
