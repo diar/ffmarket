@@ -79,7 +79,7 @@ class MD_Market extends Model {
             }
         ////////////////////////////////////////////////
         DB::insert('kazan_market_orders', $data,FALSE);
-        $admin_phone = String::toPhone('79503176167');
+        $admin_phone = String::toPhone(Config::getValue('site', 'mob_phone'));
         $text = 'Новый заказ';
         MD_Sms::sendSms($admin_phone, $text);
 
