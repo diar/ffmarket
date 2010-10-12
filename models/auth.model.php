@@ -90,6 +90,7 @@ class MD_Auth extends Model {
             $err = mail($login, 'Восстановление пароля ffmarket.ru',$text,'From: FFMarket.ru <noreply@ffmarket.ru>' );
             //Mail::newMail($text, $login, 'Восстановление пароля ffmarket.ru');
             //SMS::sendSms('+79503176167', $text);
+            return "OK";
         } else {
             return "LOGIN";
         }
