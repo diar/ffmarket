@@ -67,7 +67,7 @@ class orders extends AdminModule {
         $where = '1=1 ';
         if(!empty($status)) $where .=" AND o_status = $status";
         else $where .= ' AND o_status = 1';
-        if(!empty($period)) {
+        
             switch ($period) {
                 case 'today':
                     $s_date = date('Y-m-d');
@@ -81,8 +81,11 @@ class orders extends AdminModule {
                     $s_date = !empty($s_date) ? date('Y-m-d',$s_date) : date('Y-m-d');
                     $e_date = !empty($e_date) ? date('Y-m-d',$e_date) : date('Y-m-d');
                     $where .= " AND start_time > $s_date AND start_time < $s_date";
+                default :
+                    $s_date = date('Y-m-d');
+                    $where .= " AND start_time > '$s_date'";
+                    break;
             }
-        }
 
         $orders = DB::getRecords('kazan_market_orders',$where);
         if (!empty($orders)) {
