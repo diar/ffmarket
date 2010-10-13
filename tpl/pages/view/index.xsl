@@ -50,10 +50,11 @@
                         	<xsl:apply-templates select="size_price/item" />
                         </ul>
                     </div>
-                    <xsl:if test="//site/present = 'yes'">
-                    <div class="present">
-                    	<input type="checkbox" value="1" id="present" name="present" />В подарочной упаковке <span style="white-space:nowrap;">подарок( +200 Р )</span>
-                    </div>
+
+                    <xsl:if test="//site/present = 1">
+                        <div class="present">
+                            <input type="checkbox" value="1" id="present" name="present" />В подарочной упаковке <span style="white-space:nowrap;">подарок( +200 Р )</span>
+                        </div>
                     </xsl:if>
                     <div class="order">
                     	<input type="hidden" name="item_id" value="{id}" id="item_id"  />
