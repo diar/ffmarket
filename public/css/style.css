@@ -20,7 +20,7 @@ body {
 	padding:0;
 	font-size:12px;
 	font-family:"Trebuchet MS", Tahoma;
-	background:url(/public/images/bg_bottom.png) no-repeat right 80% #fff;
+	background:url(/public/images/bg_bottom.png) no-repeat left 80% #fff;
 }
 
 

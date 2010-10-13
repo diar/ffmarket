@@ -138,9 +138,11 @@
         <td class="description">
             <xsl:value-of select="title" /><br />
             Вес: <xsl:value-of select="size" />		<br /><br />
+            <xsl:if test="//site/present = 1">
             <input type="checkbox" name="present" value="1" class="present">
             <xsl:if test="is_present = 1"><xsl:attribute name="checked">checked</xsl:attribute></xsl:if>
             </input> В подарочной упаковке
+            </xsl:if>
         </td>
         <td class="number">
         <input type="number" class="count" value="{count}"/> шт.
