@@ -75,7 +75,7 @@ class settingsSite extends AdminModule {
         );
 
          $form->addfield(
-                array('name' => 'mod_phone',
+                array('name' => 'mob_phone',
                 'caption' => 'Сотовый менеджера',
                 'pattern' => 'text',
                 'maxlength' => '12',
