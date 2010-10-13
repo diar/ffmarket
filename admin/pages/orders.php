@@ -40,7 +40,11 @@ class orders extends AdminModule {
 
     public static function showList() {
 
-        $data['orders'] = self::getOrders();
+        $type = !empty($_GET['status']) ? $_GET['status'] : null;
+        $period = !empty($_POST['period']) ? $_POST['period'] : null;
+        $s_date = !empty($_POST['s_date']) ? strtotime($_POST['s_date']) : null;
+        $e_date = !empty($_POST['e_date']) ? strtotime($_POST['e_date']) : null;
+        $data['orders'] = self::getOrders($type,$period,$s_date,$e_date);
         //Debug::dump($data);
         $html = View::getXSLT($data, 'admin/orders');
         self::showTemplate($html);
@@ -59,8 +63,28 @@ class orders extends AdminModule {
         echo Form::arrayToJqGrid($records, 1, 1, 1);
     }
 
-    private static function getOrders($type=null,$date=null) {
-        $orders = DB::getRecords('kazan_market_orders');
+    private static function getOrders($status=null,$period=null,$s_date=null,$e_date = null) {
+        $where = '1=1 ';
+        if(!empty($status)) $where .=" AND o_status = $status";
+        else $where .= ' AND o_status = 1';
+        if(!empty($period)) {
+            switch ($period) {
+                case 'today':
+                    $s_date = date('Y-m-d');
+                    $where .= " AND start_time > '$s_date'";
+                    break;
+                case 'day3':
+                    $s_date = date('Y-m-d',time()-60*60*24*3);
+                    $where .= " AND start_time > '$s_date'";
+                    break;
+                case 'on_period':
+                    $s_date = !empty($s_date) ? date('Y-m-d',$s_date) : date('Y-m-d');
+                    $e_date = !empty($e_date) ? date('Y-m-d',$e_date) : date('Y-m-d');
+                    $where .= " AND start_time > $s_date AND start_time < $s_date";
+            }
+        }
+
+        $orders = DB::getRecords('kazan_market_orders',$where);
 
         foreach ($orders as &$item) {
             $item['items'] = unserialize($item['items']);

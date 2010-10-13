@@ -10,32 +10,31 @@
     <div class="left">
 				<div class="title">Заказы</div>
                 <div class="sort_menu">
-                	<a href="#" class="active">Все</a>
-                    <a href="#">Принятые</a>
-                    <a href="#">Выполненные</a>
-                    <a href="#">Отмененные</a>
-
+                	<a href="admin.php?page=orders&amp;status=1">Новые</a>
+                    <a href="admin.php?page=orders&amp;status=2">Исполняются</a>
+                    <a href="admin.php?page=orders&amp;status=3">Выполненные</a>
+                    <a href="admin.php?page=orders&amp;status=4">Отмененные</a>
                 </div>
            </div>
            <div class="right">
 
                 <div class="order_sort_form">
-                	<form action="admin.php?page=orders&amp;action=showList">
-                    	<div class="radio"><input type="radio" name="date" value="1" checked="checked" /> <label for="date">За сегодня</label></div>
-                        <div class="radio"><input type="radio" name="date" value="3"/> <label for="date">За 3 дня</label></div>
-                        <div class="radio"><input type="radio" name="date" value="period"/> <label for="date">За периуд</label></div>
+                	<form method='POST' >
+                    	<div class="radio"><input type="radio" name="period" value="today" checked="checked" /> <label for="date">За сегодня</label></div>
+                        <div class="radio"><input type="radio" name="period" value="day3"/> <label for="date">За 3 дня</label></div>
+                        <div class="radio"><input type="radio" name="period" value="on_period"/> <label for="date">За периуд</label></div>
                         <table class="period_sort">
                         	<tr>
                             	<td class="caption">c</td>
-                                <td><input type="text" /></td>
+                                <td><input type="text" name="s_date" /></td>
                             </tr>
                             <tr>
                             	<td class="caption">по</td>
-                                <td><input type="text" /></td>
+                                <td><input type="text" name="e_date"/></td>
                             </tr>
                             <tr>
                             	<td class="caption"> </td>
-                                <td><input type="button" value="Показать заказы" /></td>
+                                <td><input type="submit" value="Показать заказы" /></td>
                             </tr>
                         </table>
 

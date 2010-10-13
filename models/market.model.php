@@ -64,7 +64,7 @@ class MD_Market extends Model {
             'ip' => DB::quote(Router::getClientIp()),
             'user_id' => intval($_SESSION['user_id']),
             'get_myself' => $get_myself == 1 ? 1 : 0,
-            'delivery_time' => $date_time,
+            'delivery_time' => DB::quote($date_time),
         );
         //Добавление или изменении данных о пользователе - телефон и адресс доставки
         $data_additional = array(
