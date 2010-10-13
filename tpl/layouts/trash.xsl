@@ -38,6 +38,7 @@
     <!-- Заголовок страницы -->
     <xsl:template match="header">
     <div id="top_bg"></div>
+    <div id="main_div"> 
         <table id="main_table">
 	<tr class="header">
     	<td class="left">
@@ -85,9 +86,8 @@
             </td>
         </tr>
     </table>
-
-    </xsl:template>
-<div id="copyright">
+<div id="main_div"> 
+	<div id="copyright">
             <div class="left">&#169; 2010 Diar group
                 <br />
                 <br />Дизайн —
@@ -99,7 +99,8 @@
             </div>
             
         </div>
-        <div id="bg_bottom"></div>
+    </xsl:template>
+
 <xsl:template match="content_menu/item">
     <a href="/page/view/{content_uri}"><xsl:value-of select="content_title" /></a>
 </xsl:template>
