@@ -38,18 +38,71 @@
 				<div class="time">Удобное время: 
                 <input type="text" id="day" name="day" value="{//date_today/day}" /> 
                 <select name="month" id="month">
-                    <option value="1">Январь</option>
-                    <option value="2">Февраль</option>
-                    <option value="3">Март</option>
-                    <option value="4">Апрель</option>
-                    <option value="5">Май</option>
-                    <option value="6">Июнь</option>
-                    <option value="7">Июль</option>
-                    <option value="8">Август</option>
-                    <option value="9">Сентябрь</option>
-                    <option value="10">Октябрь</option>
-                    <option value="11">Ноябрь</option>
-                    <option value="12">Декабрь</option>
+                    <option value="Января">
+                    <xsl:if test="//date_today/month_number = 1">
+                    	<xsl:attribute name="selected">selected</xsl:attribute>
+                    </xsl:if>
+                    	Января
+                    </option>
+                    <option value="Февраля">
+                     <xsl:if test="//date_today/month_number = 2">
+                    	<xsl:attribute name="selected">selected</xsl:attribute>
+                    </xsl:if>
+                    Февраля
+                    </option>
+                    <option value="Марта">
+                     <xsl:if test="//date_today/month_number = 3">
+                    	<xsl:attribute name="selected">selected</xsl:attribute>
+                    </xsl:if>
+                    Марта
+                    </option>
+                    <option value="Апреля">
+                     <xsl:if test="//date_today/month_number = 4">
+                    	<xsl:attribute name="selected">selected</xsl:attribute>
+                    </xsl:if>
+                    Апреля</option>
+                    <option value="Мая">
+                     <xsl:if test="//date_today/month_number = 5">
+                    	<xsl:attribute name="selected">selected</xsl:attribute>
+                    </xsl:if>
+                    Мая</option>
+                    <option value="Июня"> 
+                    <xsl:if test="//date_today/month_number = 6">
+                    	<xsl:attribute name="selected">selected</xsl:attribute>
+                    </xsl:if>
+                    Июня</option>
+                    <option value="Июля">
+                     <xsl:if test="//date_today/month_number = 7">
+                    	<xsl:attribute name="selected">selected</xsl:attribute>
+                    </xsl:if>
+                    Июля</option>
+                    <option value="Августа">
+                     <xsl:if test="//date_today/month_number = 8">
+                    	<xsl:attribute name="selected">selected</xsl:attribute>
+                    </xsl:if>
+                    Августа</option>
+                    <option value="Сентября"> 
+                    <xsl:if test="//date_today/month_number = 9">
+                    	<xsl:attribute name="selected">selected</xsl:attribute>
+                    </xsl:if
+                    >Сентября</option>
+                    <option value="Октября">
+                     <xsl:if test="//date_today/month_number = 10">
+                    	<xsl:attribute name="selected">selected</xsl:attribute>
+                    </xsl:if>
+                    Октября</option>
+                    <option value="Ноября"> 
+                    <xsl:if test="//date_today/month_number = 11">
+                    	<xsl:attribute name="selected">selected</xsl:attribute>
+                    </xsl:if>
+                    Ноября
+                    </option>
+                    <option value="Декабря"> 
+                    <xsl:if test="//date_today/month_number = 12">
+                    	<xsl:attribute name="selected">selected</xsl:attribute>
+                    </xsl:if>
+                    Декабря
+                    </option>
                 </select>
                 <input type="text" id="time" name="time" value="20:00"/>
                 </div>

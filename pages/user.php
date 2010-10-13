@@ -133,7 +133,7 @@ class user_Page extends View {
     public static function trashAction() {
         $message = '';
         if (!empty($_POST['phone']) && !empty ($_POST['address'])) {
-            $date_time = $_POST['day'].".".$_POST['month']." ".$_POST['time'];
+            $date_time = $_POST['day']." ".$_POST['month']." ".date('Y')." ".$_POST['time'];
             $get_myself = !empty($_POST['get_myself']) ? 1 : 0;
             $message = MD_Market::order($_POST['phone'], $_POST['address'], $get_myself ,$date_time);
             self::$page['header']['content']['message'] = 'Заказ принят. Скоро с Вами свяжуться';

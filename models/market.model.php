@@ -53,11 +53,10 @@ class MD_Market extends Model {
         $unique = array_unique($products);
         $on = implode (',', $unique);
         DB::update('kazan_market_products', array('orders_count'=>'orders_count+1'), "id IN ($on)",FALSE);
-
         $user_id = intval($_SESSION['user_id']);
         $data = array(
             'items' => DB::quote(serialize($items)),
-            'status' => 1,
+            'o_status' => 1,
             'start_time' => 'NOW()',
             'address' => DB::quote($address),
             'phone' => String::toPhone($phone),

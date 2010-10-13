@@ -57,12 +57,12 @@
             <div class="change_status_form"> 
 
             	<form action="admin.php?page=orders&amp;action=changeStatus&amp;id={id}" method="post">
-                <select>
+                <select name="status">
                     <option value="Принят">Принят</option>
                     <option value="Исполняется">Исполняется</option>
                     <option value="Завершен">Завершен</option>
                     <option value="Отменен">Отменен</option>
-                </select> <input type="button" value="ok" name="sumbit" /></form>
+                </select> <input type="submit" value="ok" name="sumbit" /></form>
 	        </div>
 	        <div class="change_status"> Статус:</div>
         </div>

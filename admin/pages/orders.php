@@ -98,4 +98,13 @@ class orders extends AdminModule {
         }
         return $orders;
     }
+    public static function changeStatus() {
+        $id = ELEMENT_ID;
+        $status = !empty($_POST['status']) ? $_POST['status'] : 'Принят';
+        $data = array(
+            'o_status' => $status
+        );
+        DB::update('kazan_market_orders', $data, "id = $id");
+        header('location: '.$_SERVER['HTTP_REFERER']);
+    }
 }
