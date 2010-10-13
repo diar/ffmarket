@@ -159,7 +159,7 @@ ul.tree_menu li{
 ul.tree_menu li .active {
 	padding: 2px 20px 2px 10px;	
 	margin-left:-10px;
-	background:url(/public/images/active_menu_bg.jpg) top right #90d70a no-repeat; 
+	background:url(/public/images/active_menu_bg.png) top right #90d70a no-repeat; 
 	color:#000000;
 	text-decoration:none;
 	cursor:default;
