@@ -85,7 +85,7 @@ class orders extends AdminModule {
         }
 
         $orders = DB::getRecords('kazan_market_orders',$where);
-
+        if (!empty($orders)) {
         foreach ($orders as &$item) {
             $item['items'] = unserialize($item['items']);
             $item['gen_price'] = 0;
@@ -97,6 +97,7 @@ class orders extends AdminModule {
 
         }
         return $orders;
+        }
     }
     public static function changeStatus() {
         $id = ELEMENT_ID;
