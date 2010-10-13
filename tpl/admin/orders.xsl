@@ -71,7 +71,8 @@
         </table>
         <div class="address">
         Доставка: <xsl:value-of select="address" /> <br />
-        Телефон: <xsl:value-of select="phone" /> 
+        Телефон: <xsl:value-of select="phone" /> <br />
+        Имя клиента: <xsl:value-of select="user_name" />
         </div>
 		<div class="trash_itogo">Итого:  <xsl:value-of select="gen_price" /> р</div>
     </div>

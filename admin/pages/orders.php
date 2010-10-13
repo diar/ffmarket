@@ -88,6 +88,7 @@ class orders extends AdminModule {
         foreach ($orders as &$item) {
             $item['items'] = unserialize($item['items']);
             $item['gen_price'] = 0;
+            $item['user_name'] = DB::getValue('user', 'user_login','user_id = '.$item['user_id']);
             foreach ($item['items'] as &$product) {
                 $product['gen_price'] = $product['price']*$product['count'];
                 $item['gen_price'] +=$product['price']*$product['count'];
