@@ -87,6 +87,13 @@ td.left {
 	color:#000;
 	margin-right:10px;
 	font-size:14px;
+	padding:2px 5px;
+}
+.header .menu a.active {
+	background: #86ae19;
+	color:#FFFFFF;
+	cursor:default;
+	text-decoration:none;
 }
 .header  .sait_name {
 	font-size:16px;

@@ -127,7 +127,11 @@
 
 
 <xsl:template match="content_menu/item">
-    <a href="/page/view/{content_uri}"><xsl:value-of select="content_title" /></a>
+    <a href="/page/view/{content_uri}">
+    <xsl:if test="content_uri = //header/content/content_uri">
+    <xsl:attribute name="class">active</xsl:attribute>
+    </xsl:if>
+    <xsl:value-of select="content_title" /></a>
 </xsl:template>
 
     
