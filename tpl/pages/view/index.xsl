@@ -55,7 +55,11 @@
                     </div>
                     <div class="order">
                     	<input type="hidden" name="item_id" value="{id}" id="item_id"  />
-	                    <input type="button" id="order" value="Заказать" name="buy" />
+	                    <input type="button" id="order" value="Заказать" name="buy" >
+                        	<xsl:if test="//user/is_auth != 1">
+                            	<xsl:attribute name="rel">alert</xsl:attribute>
+                            </xsl:if>
+                        </input>
                     </div>   
                     </form> 
                 </div>

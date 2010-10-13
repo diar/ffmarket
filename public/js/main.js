@@ -31,7 +31,9 @@ $(document).ready(function () {
             'is_present':is_present
         },function(data){
             getTrashInfo();
+			if ($("#order").attr('rel')=='alert') alert('Товар добавлен в корзину. Чтобы оформить заказ Вам необходимо авторизоваться.');
             });
+		
         return false;
     });
     //
