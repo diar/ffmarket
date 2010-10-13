@@ -85,8 +85,9 @@ class MD_Market extends Model {
 
         $sms_user_text = 'Ваш заказ принят. Скоро вам позвонит наш менеджер';
         MD_Sms::sendSms($phone, $sms_user_text);
-
-        return '<span style="color:green">Ваш заказ принят</span>';
+        unset($_SESSION['trash']);
+        header('location: /user/ok');
+        die();
     }
 
     public static function getTree($parent_id = 0,& $out='') {

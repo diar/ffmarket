@@ -29,7 +29,7 @@
            <xsl:if test="is_bio = 1">
            		<div class="es">
                 <img src="/public/images/es_icon.jpg" alt="Органический продукт.Признано ЕС" align="left" class="es" />
-                           <a href="#">Органический <br />
+                           <a href="http://ec.europa.eu/agriculture/organic/consumer-confidence/logo-labelling_en">Органический <br />
 продукт.</a><br />
 Признано ЕС
                 </div>
@@ -50,9 +50,11 @@
                         	<xsl:apply-templates select="size_price/item" />
                         </ul>
                     </div>
+                    <xsl:if test="//site/present = enabled">
                     <div class="present">
                     	<input type="checkbox" value="1" id="present" name="present" />В подарочной упаковке <span style="white-space:nowrap;">подарок( +200 Р )</span>
                     </div>
+                    </xsl:if>
                     <div class="order">
                     	<input type="hidden" name="item_id" value="{id}" id="item_id"  />
 	                    <input type="button" id="order" value="Заказать" name="buy" >

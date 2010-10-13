@@ -83,6 +83,15 @@ class settingsSite extends AdminModule {
                 'value' => Config::getValue('site', 'mob_phone')
                 )
         );
+         $form->addfield(
+                array('name' => 'present',
+                'caption' => 'Упаковка на подарок',
+                'pattern' => 'text',
+                'maxlength' => '12',
+                'css_class' => 'caption',
+                'value' => Config::getValue('site', 'present')
+                )
+        );
         $form->addfield(array('name' => 'edit',
 
                 'caption' => 'Сохранить',

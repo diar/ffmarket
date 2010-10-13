@@ -87,7 +87,19 @@
     </table>
 
     </xsl:template>
-
+<div id="copyright">
+            <div class="left">&#169; 2010 Diar group
+                <br />
+                <br />Дизайн —
+                <a href="http://bpirok.ru">Большой Пирок</a>
+            </div>
+            <div class="smi">
+                При полном или частичном цитировании,
+                заимствовании, использовании ссылка обязательна.
+            </div>
+            
+        </div>
+        <div id="bg_bottom"></div>
 <xsl:template match="content_menu/item">
     <a href="/page/view/{content_uri}"><xsl:value-of select="content_title" /></a>
 </xsl:template>

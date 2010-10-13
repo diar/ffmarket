@@ -158,6 +158,11 @@ class user_Page extends View {
         self::showXSLT('pages/user/trash');
     }
 
+    public static function okAction() {
+        self::$page['header']['content'] = '';
+        self::showXSLT('pages/user/ok');
+    }
+
     public static function removeFromTrashAjaxAction() {
         if (isset($_SESSION['trash']) && count($_SESSION['trash']) > 0) {
             $z = 0;
