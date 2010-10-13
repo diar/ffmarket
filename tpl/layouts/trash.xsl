@@ -31,6 +31,7 @@
                 <script type="text/javascript" src="/public/js/libs/jquery.swfobject.1-1-1.min.js"></script>
                 <script type="text/javascript" src="/public/js/system.js"></script>
                 <script type="text/javascript" src="/public/js/main.js"></script>
+                <script type="text/javascript" src="/public/js/trash.js"></script>
             </body>
         </html>
     </xsl:template>
