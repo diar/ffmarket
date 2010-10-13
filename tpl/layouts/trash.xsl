@@ -86,7 +86,7 @@
             </td>
         </tr>
     </table>
-<div id="main_div"> 
+</div>
 	<div id="copyright">
             <div class="left">&#169; 2010 Diar group
                 <br />
