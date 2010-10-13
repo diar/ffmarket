@@ -120,7 +120,7 @@
             <div class="trash_rules">Нажимая кнопку “Купить” Вы соглашаетесь с нашими <a href="/page/view/rules" target="_blank">правилами</a> магазина</div>
             
             <div class="trash_buy_button">
-            	<input type="submit" value="Купить" id="buy" />
+            	<input type="submit" value="Купить товар" id="buy" />
             </div>
             </xsl:if>
             </form>

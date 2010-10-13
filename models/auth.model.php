@@ -87,7 +87,7 @@ class MD_Auth extends Model {
         }
         
         if ($result) {
-            $text = 'Ваш новый пароль на сайте ffmarket.ru: '.$password;
+            $text = 'Новый пароль для входа в магазин: '.$password."\r\n\r\n".'Магазин эксклюзивных продуктов FF Market.ru'."\r\n\r\n".'New password to access the store: '.$password."\r\n\r\n".'Shop exclusive products FF Market.ru'."\r\n\r\n".' http://ffmarket.ru ';
             $err = mail($login, 'Востановление пароля ffmarket.ru',$text,'From: FFMarket.ru <noreply@ffmarket.ru>' );
             //Mail::newMail($text, $login, 'Восстановление пароля ffmarket.ru');
             //SMS::sendSms('+79503176167', $text);

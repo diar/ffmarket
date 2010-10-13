@@ -105,6 +105,7 @@ class Auth {
     public static function logout_ls () {
         setcookie('key',null,time()-3600,'/');
         Session::drop('user_id');
+        Session::drop('trash');
         return true;
     }
     /**
