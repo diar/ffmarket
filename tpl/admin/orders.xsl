@@ -20,7 +20,7 @@
 
                 <div class="order_sort_form">
                 	<form method='POST' >
-                    	<div class="radio"><input type="radio" name="period" value="today" checked="checked" /> <label for="date">За сегодня</label></div>
+                    	<div class="radio"><input type="radio" name="period" value="today" /> <label for="date">За сегодня</label></div>
                         <div class="radio"><input type="radio" name="period" value="day3"/> <label for="date">За 3 дня</label></div>
                         <div class="radio"><input type="radio" name="period" value="on_period"/> <label for="date">За периуд</label></div>
                         <table class="period_sort">
