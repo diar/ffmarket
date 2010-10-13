@@ -43,6 +43,11 @@ body {
 	width:90%;
 	margin:0 auto;
 }
+
+#main_div {
+	min-height:1000px;
+}
+
 td.margin {
 	width:40px;
 }
