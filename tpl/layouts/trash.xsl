@@ -37,26 +37,31 @@
 
     <!-- Заголовок страницы -->
     <xsl:template match="header">
-        <table>
+    <div id="top_bg"></div>
+        <table id="main_table">
 	<tr class="header">
     	<td class="left">
         	<div class="logo">
-				<img src="/public/images/logo.jpg" alt="FF Market" /><br />
+				<a href="/" alt="FFMarket.ru"><img src="/public/images/logo.png" alt="FF Market" /></a><br />
                 <div class="logo_desc">
-                    Интернет магазин
-                    натуральной еды
+                   
                 </div>
             </div>
         </td>
         <td class="margin"></td>
         <td class="right">
-	        <div class="telephone">Телефон магазина: +7 (843) 5700 921</div>
+        <div class="floatRight">
+         	<div class="sait_name"><xsl:value-of select="//site/name" /></div> 
+	        <div class="telephone"> <xsl:value-of select="//site/phone" /></div>
+            <div class="clear"></div>
         	<div class="banner">
 				<img src="/public/images/banner.jpg" alt="banner" />
             </div>
             <div class="menu">
-				 <xsl:apply-templates select="content_menu/item" />
+            <xsl:apply-templates select="content_menu/item" />
+
             </div>
+        </div>
         </td>
     </tr>
     <tr class="menu">

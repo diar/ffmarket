@@ -37,20 +37,23 @@
 
     <!-- Заголовок страницы -->
     <xsl:template match="header">
-        <table>
+    <div id="top_bg"></div>
+        <table id="main_table">
 	<tr class="header">
     	<td class="left">
         	<div class="logo">
-				<a href="/" alt="FFMarket.ru"><img src="/public/images/logo.jpg" alt="FF Market" /></a><br />
+				<a href="/" alt="FFMarket.ru"><img src="/public/images/logo.png" alt="FF Market" /></a><br />
                 <div class="logo_desc">
-                    Интернет магазин
-                    натуральной еды
+                   
                 </div>
             </div>
         </td>
         <td class="margin"></td>
         <td class="right">
-	        <div class="telephone">Телефон магазина: <xsl:value-of select="//site/phone" /></div>
+        <div class="floatRight">
+         	<div class="sait_name"><xsl:value-of select="//site/name" /></div> 
+	        <div class="telephone"> <xsl:value-of select="//site/phone" /></div>
+            <div class="clear"></div>
         	<div class="banner">
 				<img src="/public/images/banner.jpg" alt="banner" />
             </div>
@@ -58,6 +61,7 @@
             <xsl:apply-templates select="content_menu/item" />
 
             </div>
+        </div>
         </td>
     </tr>
     <tr class="menu">
@@ -116,22 +120,9 @@
                 При полном или частичном цитировании,
                 заимствовании, использовании ссылка обязательна.
             </div>
-            <div class="right">
-            	Присоединяйся к нам!
-                <br />
-                <br />
-                <noindex>
-                    <a href="http://www.facebook.com/profile.php?id=100001264771648" class="social fb" title="Мы в FaceBook"></a>
-                </noindex>
-                <noindex>
-                    <a href="http://foodfoodru.livejournal.com/" class="social lj" title="Мы в ЖЖ"></a>
-                </noindex>
-                <a href="http://vkontakte.ru/club16013362 " class="social vk" title="Мы Вконтакте"></a>
-                <noindex>
-                    <a href="http://twitter.com/foodfoodru" class="social tw"  title="Мы в Twitter"></a>
-                </noindex>
-            </div>
+            
         </div>
+        <div id="bg_bottom"></div>
     </xsl:template>
 
 

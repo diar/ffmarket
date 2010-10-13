@@ -20,11 +20,29 @@ body {
 	padding:0;
 	font-size:12px;
 	font-family:"Trebuchet MS", Tahoma;
+	background:url(/public/images/bg_bottom.png) no-repeat left bottom #fff;
+}
+
+
+/********* BG *********/
+
+#top_bg {
+	background:url(/public/images/bg_top.png) -220px -100px;
+	width:165px;
+	height:280px;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:-1;
 }
 
 
 
 /******************** BLOCKS ***********************/
+#main_table {
+	width:90%;
+	margin:0 auto;
+}
 td.margin {
 	width:40px;
 }
@@ -33,7 +51,6 @@ td.left {
 }
 
 .header td {
-	background:#000;
 }
 .header .logo {
 	padding-left:30px;
@@ -50,28 +67,36 @@ td.left {
 .header .banner {
 	margin-right:40px;	
 }
+
 .header .telephone {
-	margin-right:40px;	
-	padding:10px 0;
-}
-.header .telephone {
-	color:#fff;
+	color:#ff6600;
 	font-size:14px;
+	float:right;
+	margin-right:40px;	
+	padding:20px 0;
 }
 
 .header .menu {
 	width:600px;
 	margin-right:40px;
-	padding:30px 0 20px 0;
+	padding:20px 0 20px 0;
 	float:right;
 	text-align:left;
 }
 .header .menu a{
-	color:#FFFFFF;
+	color:#000;
 	margin-right:10px;
 	font-size:14px;
 }
+.header  .sait_name {
+	font-size:16px;
+	float:left;
+	padding:20px 0;
+}
 
+.header .floatRight {
+	float: right;
+}
 
 tr.menu {
 	height:50px;
@@ -496,8 +521,8 @@ li > li.active {
 
 #copyright {
     height:115px;
-    background:#000;
-    color:#fff;
+    background:url(/public/images/bg_bottom_line.png);
+    color:#000;
     margin-top:20px;
     font-size:11px;
 }
@@ -509,7 +534,7 @@ li > li.active {
 }
 
 #copyright .left a{
-    color:#FFFFFF;
+    color:#000;
 }
 
 #copyright .right {
