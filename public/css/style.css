@@ -69,8 +69,9 @@ td.left {
 .header td.right {
 	text-align:right;
 }
-.header .banner {
+.header #banner {
 	margin-right:40px;	
+	border: 1px solid #86ae19;
 }
 
 .header .telephone {

@@ -14,7 +14,7 @@
                 <meta name="description" content="{site/description}" />
                 <link rel="icon" type="image/vnd.microsoft.icon"  href="/public/images/favicon.ico" />
                 <link rel="stylesheet" type="text/css" href="/public/css/style.css" />
-                <link rel="stylesheet" type="text/css" href="/public/js/libs/lightbox/css/jquery.lightbox.css" />
+
                 <xsl:comment><![CDATA[[if IE]>
                 <link href="/public/css/ie.css" rel="stylesheet" type="text/css" />
                 <![endif]]]>
@@ -28,9 +28,11 @@
                     <xsl:value-of select="//user/is_auth" />';
                 </script>
                 <script type="text/javascript" src="/public/js/libs/libs.js"></script>
-                <script type="text/javascript" src="/public/js/libs/lightbox/js/jquery.lightbox.pack.js"></script>
+                <script type="text/javascript" src="/public/js/libs/jquery.swfobject.1-1-1.min.js"></script>
                 <script type="text/javascript" src="/public/js/system.js"></script>
                 <script type="text/javascript" src="/public/js/main.js"></script>
+                
+                                
             </body>
         </html>
     </xsl:template>
@@ -55,8 +57,8 @@
          	<div class="sait_name"><xsl:value-of select="//site/name" /></div> 
 	        <div class="telephone"> <xsl:value-of select="//site/phone" /></div>
             <div class="clear"></div>
-        	<div class="banner">
-				<img src="/public/images/banner.jpg" alt="banner" />
+        	<div id="banner">
+				
             </div>
             <div class="menu">
             <xsl:apply-templates select="content_menu/item" />

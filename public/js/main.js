@@ -2,6 +2,12 @@
 // Выполнение после загрузки на всех страницах
 $(document).ready(function () {
 
+$('#banner').flash({
+				swf: '/upload/flash/banner.swf',
+				width: 600,
+				height: 90}
+);
+
     $("#size_price input").click (function(){
         preparePrice ();
     });
