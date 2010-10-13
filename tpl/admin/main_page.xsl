@@ -12,32 +12,31 @@
         <div class="bg_block s_products">
             <div class="caption">Продукты</div>
             <div>
-                <span>Всего на сайте:</span><br/>
-                <span>Нет в наличии:</span><br/>
-                <span>Со скидкой:</span><br/>
-                <span>На витрине:</span><br/>
-                <span>Новые:</span><br/>
-                <span>Рекомендованные:</span><br/>
-                <span>Без фото:</span><br/>
-                <span>Средняя цена:</span><br/>
+                <span>Всего на сайте: </span> <xsl:value-of select="//products/all" /><br/>
+                <span>Нет в наличии: </span> <xsl:value-of select="//products/n_h" /><br/>
+                <span>Со скидкой: </span> <xsl:value-of select="//products/d" /><br/>
+                <span>На витрине: </span> <xsl:value-of select="//products/o_m" /><br/>
+                <span>Новые:</span> <xsl:value-of select="//products/new" /><br/>
+                <span>Рекомендованные:</span> <xsl:value-of select="//products/rd" /><br/>
+                <span>Без фото:</span> <xsl:value-of select="//products/w_o_p" /><br/>
             </div>
         </div>
         <div class="bg_block s_orders">
             <div class="caption">Заказы</div>
             <div>
-                <span>Всего:</span><br/>
+                <span>Всего: </span> <xsl:value-of select="//orders/all" /><br/>
                 <span>Со скидкой:</span><br/>
                 <span>Средняя цена:</span><br/>
-                <span>Отмененные:</span><br/>
+                <span>Отмененные: </span> <xsl:value-of select="//orders/cancel" /><br/>
                 <span>Повторные:</span><br/>
-                <span>Не выполненные:</span><br/>
             </div>
         </div>
         <div class="bg_block s_clients">
             <div class="caption">Клиенты</div>
-            <span>Всего:</span><br/>
-            <span>Мужчины:</span><br/>
-            <span>Женщины:</span><br/>
+            <span>Всего: </span><xsl:value-of select="//clients/all" /><br/>
+            <span>Мужчины: </span> <xsl:value-of select="//clients/m" /><br/>
+            <span>Женщины: </span> <xsl:value-of select="//clients/w" /><br/>
+            <span>Не определились: </span> <xsl:value-of select="//clients/o" /><br/>
         </div>
         
     </xsl:template>
