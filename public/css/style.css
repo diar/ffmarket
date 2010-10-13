@@ -21,6 +21,7 @@ body {
 	font-size:12px;
 	font-family:"Trebuchet MS", Tahoma;
 	background:url(/public/images/bg_bottom.png) no-repeat left 80% #fff;
+	min-height:800px;
 }
 
 
