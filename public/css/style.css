@@ -73,7 +73,7 @@ td.left {
 	font-size:14px;
 	float:right;
 	margin-right:40px;	
-	padding:20px 0;
+	padding:23px 0;
 }
 
 .header .menu {
@@ -196,13 +196,13 @@ ul.tree_menu li ul a.active {
 }
 #list .item.recomended{
 border:2px solid #ff6600;
-padding:2px;
-height:310px;
+padding:4px;
+height:306px;
 }
 #list .item.new{
 border:2px solid #86AE19;
-padding:2px;
-height:310px;
+padding:4px;
+height:306px;
 }
 #list .item .foto{
     width: 200px;
@@ -234,6 +234,14 @@ height:310px;
 	color:#000000;
 	text-decoration:line-through;
 	padding-right:10px;
+}
+#list .item .title span.new {
+padding:0;
+color:#86AE19;
+}
+#list .item .title span.recomended {
+padding:0;
+color:#86AE19;
 }
 /*********************PRODUCT*********************/
 

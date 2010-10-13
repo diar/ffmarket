@@ -40,6 +40,15 @@
                         </a>
                     </div>
                     <div class="title">
+                        
+                        <xsl:choose>
+                <xsl:when test="type = 'Новый продукт'">
+                	<span class="new">Новинка!</span> 
+                </xsl:when>
+                <xsl:when test="type = 'Рекомендовано'">
+	                <span class="recomended">Рекомендуем!</span>
+                </xsl:when>
+            </xsl:choose>
                         <a href="/product/view/{url}"><xsl:value-of select="title" /></a>
                     </div>
                     
